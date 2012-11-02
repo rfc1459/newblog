@@ -1,0 +1,105 @@
+# Navigation entries
+-
+  title: "Navigazione"
+  icon: "globe"
+  entries:
+    -
+      title: "Home"
+      href: "/"
+      nav_id: "home"
+      icon: "home"
+    -
+      title: "About me"
+      href: "/about/"
+      nav_id: "about-me"
+      icon: "user"
+    -
+      title: "Disclaimer"
+      href: "/disclaimer/"
+      nav_id: "disclaimer"
+      icon: "exclamation-sign"
+    -
+      title: "Credits"
+      href: "/credits/"
+      nav_id: "credits"
+      icon: "beaker"
+    -
+      title: "Rettifiche"
+      href: "/rettifiche/"
+      nav_id: "rettifiche"
+      icon: "trash"
+
+# Blogroll entries
+-
+  title: "Blogroll"
+  icon: "bookmark"
+  entries:
+    -
+      href: "http://blog.sonic88.org/"
+      title: "Sonic"
+    -
+      href: "http://insomniac.slackware.it/"
+      title: "Insomniac"
+    -
+      href: "http://silentman.it/"
+      title: "Silentman"
+    -
+      href: "http://margiovanni.com/"
+      title: "Kentoo"
+    -
+      href: "http://blog.fabio.mancinelli.me/"
+      title: "Bitloom"
+    -
+      href: "http://blog.bofh.it/"
+      title: "Md"
+    -
+      href: "http://www.groklaw.net"
+      title: "Groklaw"
+
+# Outbound links
+-
+  title: "Link vari"
+  icon: "link"
+  entries:
+    -
+      title: "GitHub"
+      href: "https://github.com/rfc1459/"
+      icon: "github"
+    -
+      title: "Twitter"
+      href: "https://twitter.com/rfc1459"
+      icon: "twitter"
+    -
+      title: "Google+"
+      href: "https://plus.google.com/109288520593001509254"
+      icon: "google-plus"
+    -
+      title: "Facebook"
+      href: "https://www.facebook.com/morpholo/"
+      icon: "facebook"
+
+# Meta entries
+-
+  title: "Meta"
+  icon: "sitemap"
+  entries:
+    -
+      title: "Archivio"
+      href: "#"
+      icon: "calendar"
+    -
+      title: "Categorie"
+      href: "#"
+      icon: "list-ul"
+    -
+      title: "Tag"
+      href: "#"
+      icon: "tags"
+    -
+      title: "Feed (atom)"
+      href: "#"
+      icon: "rss"
+    -
+      title: "Login"
+      href: "http://trololololololololololo.com/" # :-)
+      icon: "lock"

@@ -1,0 +1,83 @@
+-# layouts/default.haml - Master layout file
+-# Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
+-#
+-# This program is free software: you can redistribute it and/or modify
+-# it under the terms of the GNU General Public License as published by
+-# the Free Software Foundation, either version 3 of the License, or
+-# (at your option) any later version.
+-#
+-# This program is distributed in the hope that it will be useful,
+-# but WITHOUT ANY WARRANTY; without even the implied warranty of
+-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-# GNU General Public License for more details.
+-#
+-# You should have received a copy of the GNU General Public License
+-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+!!!
+%html{:lang => "it"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}
+    %title= get_title
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/bootstrap.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/bootstrap-responsive.min.css"}
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/overrides.css"}
+    / IE Sucks
+    /[if lt IE 9]
+      %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+    %script{:type => "text/javascript", :src => "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"}
+
+    / Shortcut icons et al.
+    %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+    %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "/apple-touch-icon-144-precomposed.png"}
+    %link{:rel => "apple-touch-icon-precomposed", :sizes => "114x114", :href => "/apple-touch-icon-114-precomposed.png"}
+    %link{:rel => "apple-touch-icon-precomposed", :sizes => "72x72", :href => "/apple-touch-icon-72-precomposed.png"}
+    %link{:rel => "apple-touch-icon-precomposed", :href => "/apple-touch-icon-57-precomposed.png"}
+
+  %body
+    / The top-level navigation bar used in phone/narrow tablet layout
+    .navbar.navbar-static-top.hidden-desktop
+      .navbar-inner
+        .container
+          %button{:type => "button", :class => "btn btn-navbar", :data => {:toggle => "collapse", :target => ".nav-collapse"}}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a{:class => "brand", :href => "/"}= @config[:blog_name]
+          .nav-collapse.collapse
+            %ul.nav
+              - @config[:navigation].each do |block|
+                = render('_navbar_partial', :block => block)
+    .container
+      .row-fluid
+        = render('_header', :item => @item)
+      .row-fluid
+        .span10
+          ~ yield
+        / The navigation sidebar used on devices with high resolution (desktops et al.)
+        .span2.visible-desktop
+          - @config[:navigation].each do |block|
+            = render('_sidebar_partial', :block => block)
+
+      .row-fluid
+        %hr
+        %footer
+          &copy; Matteo Panella &mdash; Contenuto concesso in licenza
+          %a{:href => "http://creativecommons.org/licenses/by/3.0/it/deed.it", :target => "_blank"} CC BY 3.0
+          &mdash;
+          %a{:href => "#", :rel => "tooltip", :title => "Coming soon, I promise!"}
+            -# Closest thing I could find resembling a "fork me" icon :S
+            %i.icon-random.icon-large
+            Fork me on GitHub
+
+
+    %script{:src => "http://code.jquery.com/jquery-latest.js"}
+    %script{:src => "/js/bootstrap.min.js"}
+    %script{:src => "/js/mathjax_config.js"}
+    - if is_front_page? or not @item[:disqus_id].nil?
+      %script{:src => "/js/disqus_count.js"}
+    - if not @item[:disqus_id].nil?
+      %script{:src => "/js/disqus.js"}
+    %script{:src => "/js/helpers.js"}

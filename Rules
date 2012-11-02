@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+
+# Rules - routing and compiling rules
+# Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+preprocess do
+  # Merge config.yaml with deployment-dependent config
+  load_local_configuration ENV['environ']
+  load_navigation_data
+
+  # Unpublish items if necessary
+  items.delete_if { |item| item[:publish] == false }
+end
+
+compile '/assets/*' do
+  # Don't filter assets
+end
+
+compile '/icons/*' do
+  # Don't filter icons
+end
+
+compile '/js/*/' do
+  ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+  # Check if we have to filter this item through erb
+  if ext == 'erb'
+    filter :erb
+  end
+
+  # Uglify everything, but DON'T mangle variable names, since it would break DISQUS
+  filter :uglify_js, :mangle => false
+end
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+    # Determine which filter we should use for this item
+    if ext == 'erb'
+      filter :erb
+    elsif ext == 'haml' || ext.nil?
+      filter :haml
+    elsif ext == 'md' || ext == 'markdown'
+      filter :kramdown
+    else
+      raise "No filter for #{item.identifier}"
+    end
+
+    item[:layout] = "none" unless item[:layout] || File.extname(route_path(item)) == '.html'
+    layout 'default' unless item[:layout] == "none"
+  end
+end
+
+route '/assets/*/' do
+  route_assets(item)
+end
+
+route '/icons/*/' do
+  item[:content_filename].gsub(/^content\/icons/, '')
+end
+
+route '*' do
+  route_path(item)
+end
+
+layout '*', :haml, :format => :html5
