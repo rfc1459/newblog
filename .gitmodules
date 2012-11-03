@@ -1,0 +1,4 @@
+[submodule "content/assets"]
+	path = content/assets
+	url = git://github.com/rfc1459/newblog-assets.git
+	ignore = untracked
