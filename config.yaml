@@ -75,3 +75,12 @@ watcher:
   # When to send notifications (using Growl or notify-send).
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
+
+# Deployment configuration
+deploy:
+  production:
+    kind: rsync
+    dst: "blog:production"
+  staging:
+    kind: rsync
+    dst: "blog:staging"
