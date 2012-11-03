@@ -1,8 +1,5 @@
 !function ($) {
-  $(function() {
-      // Enable data-api queries for tooltips in footer
-      $('footer').tooltip({
-        selector: "a[rel=tooltip]"
-      })
-  })
+  $(document).on('touchstart.dropdown', '.dropdown-menu', function(e) {
+    e.stopPropagation();
+  });
 }(window.jQuery)
