@@ -74,7 +74,8 @@
     %script{:src => "http://code.jquery.com/jquery-latest.js"}
     %script{:src => "/js/bootstrap.min.js"}
     %script{:src => "/js/mathjax_config.js"}
-    - if is_front_page? or not @item[:disqus_id].nil?
-      %script{:src => "/js/disqus_count.js"}
-    - if not @item[:disqus_id].nil?
-      %script{:src => "/js/disqus.js"}
+    - if @config[:disqus_enabled]
+      - if is_front_page? or not @item[:disqus_id].nil?
+        %script{:src => "/js/disqus_count.js"}
+      - if not @item[:disqus_id].nil?
+        %script{:src => "/js/disqus.js"}
