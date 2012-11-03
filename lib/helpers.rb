@@ -29,12 +29,16 @@ def is_current_item?(nav_entry)
   not @item[:nav_id].nil? and nav_entry.has_key?(:nav_id) and @item[:nav_id] == nav_entry[:nav_id]
 end
 
+def url_for_article(item)
+  return item.identifier.gsub('-', '/').gsub('_', '-')
+end
+
 def route_path(item)
   # in-memory items do not have a file name
   return item.identifier + "index.html" if item[:content_filename].nil?
 
   # Article routes are special ;-)
-  return item.identifier.gsub('-', '/').gsub('_', '-') + 'index.html' if item[:kind] == 'article'
+  return url_for_article(item) + 'index.html' if item[:kind] == 'article'
 
   url = item[:content_filename].gsub(/^content/, '')
 

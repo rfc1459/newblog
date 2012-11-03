@@ -76,12 +76,14 @@
           %a{:href => "https://github.com/rfc1459/newblog/", :target => "_blank"}
             Fork me on GitHub
 
-
+    -# Javascript stuff
     %script{:src => "http://code.jquery.com/jquery-latest.js"}
     %script{:src => "/js/bootstrap.min.js"}
     %script{:src => "/js/mathjax_config.js"}
     - if @config[:disqus_enabled]
-      - if is_front_page? or not @item[:disqus_id].nil?
+      - if is_front_page?
         %script{:src => "/js/disqus_count.js"}
-      - if not @item[:disqus_id].nil?
+      - elsif @item[:kind] == 'article'
+        :javascript
+          disqus_id = "#{url_for_article(@item)}"
         %script{:src => "/js/disqus.js"}
