@@ -54,8 +54,14 @@
       .row-fluid
         = render('_header', :item => @item)
       .row-fluid
+        / Main content area
         .span10
-          ~ yield
+          - content = find_and_preserve(yield)
+          -# If we're dealing with an article we need to render it using a specialised partial
+          - if @item[:kind] == 'article'
+            = render('_article_partial', {:item => @item, :content => content})
+          - else
+            = content
         / The navigation sidebar used on devices with high resolution (desktops et al.)
         .span2.visible-desktop
           - @config[:navigation].each do |block|
