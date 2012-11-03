@@ -33,8 +33,12 @@ def route_path(item)
   # in-memory items do not have a file name
   return item.identifier + "index.html" if item[:content_filename].nil?
 
+  # Article routes are special ;-)
+  return item.identifier.gsub('-', '/').gsub('_', '-') + 'index.html' if item[:kind] == 'article'
+
   url = item[:content_filename].gsub(/^content/, '')
 
+  # Fix output file extension
   extname = '.' + item[:extension].split('.').last
   outext = '.haml'
   if url.match(/(\.[a-zA-Z0-9]+){2}$/)
