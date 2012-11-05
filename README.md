@@ -31,6 +31,15 @@ Requirements
 
 Writing skills are entirely optional ;-)
 
+#### Note for RVM users
+
+The absolute minimum supported version of RVM is 1.16.17 and you **must** have
+a preinstalled MRI 1.9.3-p286 interpreter.
+
+If your setup meets those requirements, the bundled `.rvmrc` file will set up
+a new environment called `1.9.3-p286@newblog` and automatically install all
+required gems via Bundler.
+
 ### Server-side
 
   * anything capable of serving static files
