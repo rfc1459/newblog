@@ -18,7 +18,7 @@
 
 preprocess do
   # Merge config.yaml with deployment-dependent config
-  load_local_configuration ENV['environ']
+  load_local_configuration ENV[ENV_NAME]
   load_navigation_data
 
   # Unpublish items if necessary

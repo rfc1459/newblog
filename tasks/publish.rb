@@ -15,12 +15,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'nanoc'
+require_relative '../lib/environments'
 
 module Rfc1459
 
   module Newblog
 
     module Tasks
+
       class Publish
 
         def initialize(environ)
@@ -47,12 +49,12 @@ module Rfc1459
       private
 
         def set_environment
-          @old_env = ENV['environment']
-          ENV['environment'] = @environ
+          @old_env = ENV[ENV_NAME]
+          ENV[ENV_NAME] = @environ
         end
 
         def reset_environment
-          ENV['environment'] = @old_env
+          ENV[ENV_NAME] = @old_env
         end
 
       end

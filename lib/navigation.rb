@@ -16,21 +16,25 @@
 
 module Rfc1459
 
-  module Navigation
-    require 'yaml'
+  module Newblog
 
-    def load_navigation_data(filename='navigation.yaml')
-      if File.exists?(filename)
-        nav_data = YAML.load_file(filename).symbolize_keys
-        # Attach nav_data to global configuration
-        @config[:navigation] = nav_data
-      else
-        raise RuntimeError.new("Navigation data file #{filename} does not exist")
+    module Navigation
+      require 'yaml'
+
+      def load_navigation_data(filename='navigation.yaml')
+        if File.exists?(filename)
+          nav_data = YAML.load_file(filename).symbolize_keys
+          # Attach nav_data to global configuration
+          @config[:navigation] = nav_data
+        else
+          raise RuntimeError.new("Navigation data file #{filename} does not exist")
+        end
       end
+
     end
 
   end
 
 end
 
-include Rfc1459::Navigation
+include Rfc1459::Newblog::Navigation

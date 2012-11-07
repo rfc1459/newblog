@@ -16,19 +16,26 @@
 
 module Rfc1459
 
-  module Environments
+  module Newblog
 
-    require 'yaml'
+    module Environments
 
-    def load_local_configuration(environ=nil)
-      env_filename = 'environments/' + (environ.nil? ? 'development' : environ) + '.yaml'
-      if File.exists?(env_filename)
-        @config.merge!(YAML.load_file(env_filename).symbolize_keys)
+      # Going through "rake publish" includes this module twice, silence the warning
+      ENV_NAME = 'environ' unless defined? ENV_NAME
+
+      require 'yaml'
+
+      def load_local_configuration(environ=nil)
+        env_filename = 'environments/' + (environ.nil? ? 'development' : environ) + '.yaml'
+        if File.exists?(env_filename)
+          @config.merge!(YAML.load_file(env_filename).symbolize_keys)
+        end
       end
+
     end
 
   end
 
 end
 
-include Rfc1459::Environments
+include Rfc1459::Newblog::Environments
