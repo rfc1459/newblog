@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Blogging
 
 def get_title
   subtitle = is_front_page? ? "Home" : @item[:title]
@@ -30,7 +31,34 @@ def is_current_item?(nav_entry)
 end
 
 def url_for_article(item)
-  return item.identifier.gsub('-', '/').gsub('_', '-')
+  url_components = item.identifier.gsub('-', '/').gsub('_', '-').split('/')
+  # ["", "YYYY", "MM", "DD", "slug"] -> ["", "YYYY", "MM", "slug", ""]
+  url_components[3] = url_components[4]
+  url_components[4] = ""
+  return url_components.join('/')
+end
+
+def update_articles_timestamps
+  items.each do |item|
+    # Exclude assets, binary files and xml files from sitemap
+    if item[:content_filename]
+      begin
+        ext = File.extname(route_path(item))
+      rescue
+        ext = File.extname(route_assets(item))
+      end
+      item[:is_hidden] = true if item[:content_filename] =~ %r{^content/(assets|js)} || item.binary? || ext == '.xml'
+    end
+
+    if item[:kind] == 'article'
+      # If the item itself has no date, derive it from its filename
+      item[:created_at] ||= created_at(item)
+      # Workaround for a nasty nanoc/YAML issue
+      item[:created_at] = item[:created_at].to_s if item[:created_at].is_a?(Date)
+
+      # TODO: generate updated_at based on SHA1 sum of content
+    end
+  end
 end
 
 def route_path(item)
@@ -65,4 +93,18 @@ end
 
 def route_assets(item)
   item[:content_filename].gsub(/^content\/assets\/[^\/]+/, '').gsub(/_/, '.')
+end
+
+private
+
+def created_at(item)
+  parts = item.identifier.gsub('-', '/').split('/')[1, 3]
+  date = '1970/01/01'
+  begin
+    tmp = parts.join('/')
+    Date.strptime(tmp, "%Y/%m/%d")
+    date = tmp
+  rescue
+  end
+  date
 end

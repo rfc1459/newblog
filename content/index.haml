@@ -2,21 +2,32 @@
 nav_id: home
 ---
 
-%h2
-  %i.icon-warning-sign.icon-large
-  Work in progress
+.alert.alert-info
+  %h2
+    %i.icon-warning-sign.icon-large
+    Work in progress
 
-%p
-  Al momento il blog non &egrave; tale, visto che mancano:
+  %p
+    Al momento il blog non &egrave; tale, visto che mancano:
 
-%ul
-  %li la homepage con l'elenco degli ultimi N post (dovrebbe apparire qui!)
-  %li l'archivio
-  %li i tag
-  %li le categorie
-  %li l'highlight del codice
-  %li pi&ugrave; in generale l'impaginazione dei post
-  %li i contenuti!
+  %ul
+    %li l'archivio
+    %li i tag
+    %li le categorie
+    %li l'highlight del codice
+    %li
+      pi&ugrave; in generale un'impaginazione
+      %em decente
+      dei post
+    %li i contenuti!
 
-%p
-  Abbiate un po' di pazienza, sto lavorando (anche) per voi ;-)
+  %p
+    Abbiate un po' di pazienza, sto lavorando (anche) per voi ;-)
+
+- unless articles.empty?
+  - articles.each_with_index do |article, i|
+    - if i > 0
+      %hr
+    = render('_article_partial', {:item => article, :content => article.compiled_content, :embedded => true})
+- else
+  Non &egrave; presente nessun articolo :-(

@@ -23,6 +23,9 @@ preprocess do
 
   # Unpublish items if necessary
   items.delete_if { |item| item[:publish] == false }
+
+  # Update timestamps
+  update_articles_timestamps
 end
 
 compile '/assets/*' do
@@ -79,4 +82,4 @@ route '*' do
   route_path(item)
 end
 
-layout '*', :haml, :format => :html5
+layout '*', :haml

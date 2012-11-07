@@ -14,14 +14,28 @@
 -# You should have received a copy of the GNU General Public License
 -# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
--# The title
-%h2= item[:title]
+- embedded ||= false
+- author = item[:author].nil? ? "qualcuno (wtf?)" : item[:author]
+
+- if embedded
+  %a{:href => url_for(item)}
+    %h2= item[:title]
+
+.metadata
+  %small
+    Scritto il #{item[:created_at]} da #{author}
+    - if embedded and @config[:disqus_enabled]
+      &mdash;
+      %a{:href => "#disqus_thread", :data => {:disqus_identifier => url_for_article(item)}} Commenti
 
 -# Article body
 = content
 
--# TODO: Metadata
-
 -# DISQUS form
--if @config[:disqus_enabled]
-  #disqus_thread
+- unless embedded
+  -if @config[:disqus_enabled]
+    #disqus_thread
+  - else
+    .alert.alert-warning
+      %i.icon-warning-sign.icon-large
+      Staging mode, comments are disabled
