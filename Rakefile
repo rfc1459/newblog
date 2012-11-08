@@ -24,7 +24,7 @@ end
 
 # Load custom tasks
 Dir[File.dirname(__FILE__) + '/tasks/**/*.rake'].each do |f|
-  Rake.import f
+  import f
 end
 
 namespace :publish do
