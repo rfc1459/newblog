@@ -31,7 +31,7 @@ def is_current_item?(nav_entry)
 end
 
 def url_for_article(item)
-  url_components = item.identifier.gsub('-', '/').gsub('_', '-').split('/')
+  url_components = strip_posts_prefix(item.identifier).gsub('-', '/').gsub('_', '-').split('/')
   # ["", "YYYY", "MM", "DD", "slug"] -> ["", "YYYY", "MM", "slug", ""]
   url_components[3] = url_components[4]
   url_components[4] = ""
@@ -97,8 +97,12 @@ end
 
 private
 
+def strip_posts_prefix(id)
+  id.gsub(/^\/posts/, '')
+end
+
 def created_at(item)
-  parts = item.identifier.gsub('-', '/').split('/')[1, 3]
+  parts = strip_posts_prefix(item.identifier).gsub('-', '/').split('/')[1, 3]
   date = '1970/01/01'
   begin
     tmp = parts.join('/')
