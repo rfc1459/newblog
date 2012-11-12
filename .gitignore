@@ -1,4 +1,7 @@
 /*.log
+/.pc/*
 /tmp/*
 /output/*
 /content/posts/*
+/content/assets/*
+/work/*

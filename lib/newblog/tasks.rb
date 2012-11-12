@@ -22,4 +22,4 @@ module Rfc1459::Newblog
 end
 
 require 'newblog/tasks/publish'
-
+require 'newblog/tasks/assets'

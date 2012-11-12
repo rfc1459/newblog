@@ -17,6 +17,7 @@
 require 'rake'
 require 'rake/tasklib'
 require 'nanoc'
+require 'nanoc/cli'
 
 module Rfc1459::Newblog::Tasks
 

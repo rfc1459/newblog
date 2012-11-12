@@ -1,0 +1,12 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding-bottom: 40px;
+}
+
+#disqus_thread {
+  margin-top: 40px;
+}
+
+.metadata {
+  padding-bottom: 10px;
+}

@@ -17,24 +17,40 @@
 # Add "lib" to the current load path
 $:.unshift File.expand_path("../lib", __FILE__)
 
-# Import nanoc built-in tasks
-require 'nanoc/tasks'
-
 # Load tasks
+require 'rake/clean'
 require 'newblog/tasks'
 
 include Rfc1459::Newblog::Tasks
 
+# Create assets management tasks
+BuildAssets.new
+
+CLEAN.include("output")
+CLOBBER.include("tmp")
+
 namespace :publish do
 
   desc "Compile and publish in staging mode"
-  Rfc1459::Newblog::Tasks::Publish.new :staging do |t|
+  Publish.new :staging do |t|
     t.mode = :staging
   end
 
 end
 
 desc "Compile and publish in production mode"
-Rfc1459::Newblog::Tasks::Publish.new do |t|
+Publish.new do |t|
   t.mode = :production
+end
+
+# Emergency reset switch (just in case)
+namespace :emergency do
+  task :reset do
+    # This can fail
+    begin
+      Rake::Task["assets:unapply_quilt"].execute
+    rescue
+    end
+    Rake::Task["clobber"].execute
+  end
 end

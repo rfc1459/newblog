@@ -1,0 +1,12 @@
+Index: newblog/assets/src/bootstrap/js/bootstrap-dropdown.js
+===================================================================
+--- newblog.orig/assets/src/bootstrap/js/bootstrap-dropdown.js	2012-11-03 14:23:07.000000000 +0100
++++ newblog/assets/src/bootstrap/js/bootstrap-dropdown.js	2012-11-03 14:46:48.000000000 +0100
+@@ -144,5 +144,6 @@
+     .on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+     .on('click.dropdown.data-api touchstart.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
+     .on('keydown.dropdown.data-api touchstart.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
++    .on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation() })
+ 
+ }(window.jQuery);
+\ No newline at end of file
