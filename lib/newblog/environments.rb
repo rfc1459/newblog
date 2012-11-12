@@ -1,4 +1,4 @@
-# Rakefile - master Rakefile for newblog
+# lib/newblog/environments.rb - Support for multiple deployment environments
 # Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,27 +14,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Add "lib" to the current load path
-$:.unshift File.expand_path("../lib", __FILE__)
+module Rfc1459::Newblog
 
-# Import nanoc built-in tasks
-require 'nanoc/tasks'
+  module Environments
 
-# Load tasks
-require 'newblog/tasks'
+    # Going through "rake publish" includes this module twice, silence the warning
+    ENV_NAME = 'environ' unless defined? ENV_NAME
 
-include Rfc1459::Newblog::Tasks
+    require 'yaml'
 
-namespace :publish do
+    def load_local_configuration(environ=nil)
+      env_filename = 'environments/' + (environ.nil? ? 'development' : environ) + '.yaml'
+      if File.exists?(env_filename)
+        @config.merge!(YAML.load_file(env_filename).symbolize_keys)
+      end
+    end
 
-  desc "Compile and publish in staging mode"
-  Rfc1459::Newblog::Tasks::Publish.new :staging do |t|
-    t.mode = :staging
   end
 
-end
-
-desc "Compile and publish in production mode"
-Rfc1459::Newblog::Tasks::Publish.new do |t|
-  t.mode = :production
 end

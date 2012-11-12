@@ -14,8 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Silly, but required by Nanoc
+$:.unshift File.expand_path("..", __FILE__)
+
+require 'newblog'
+
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
+include Rfc1459::Newblog::Environments
+include Rfc1459::Newblog::Navigation
 
 def get_title
   subtitle = is_front_page? ? "Home" : @item[:title]

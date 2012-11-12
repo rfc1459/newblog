@@ -1,4 +1,4 @@
-# lib/navigation.rb - Generalized navigation data source
+# lib/newblog/tasks.rb - Rake tasks
 # Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,27 +14,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module Rfc1459
+require 'newblog'
 
-  module Newblog
-
-    module Navigation
-      require 'yaml'
-
-      def load_navigation_data(filename='navigation.yaml')
-        if File.exists?(filename)
-          nav_data = YAML.load_file(filename).symbolize_keys
-          # Attach nav_data to global configuration
-          @config[:navigation] = nav_data
-        else
-          raise RuntimeError.new("Navigation data file #{filename} does not exist")
-        end
-      end
-
-    end
-
+module Rfc1459::Newblog
+  module Tasks
   end
-
 end
 
-include Rfc1459::Newblog::Navigation
+require 'newblog/tasks/publish'
+

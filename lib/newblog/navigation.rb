@@ -1,4 +1,4 @@
-# lib/environments.rb - Support for multiple deployment environments
+# lib/newblog/navigation.rb - Generalized navigation data source
 # Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,28 +14,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module Rfc1459
+module Rfc1459::Newblog
 
-  module Newblog
+  module Navigation
+    require 'yaml'
 
-    module Environments
-
-      # Going through "rake publish" includes this module twice, silence the warning
-      ENV_NAME = 'environ' unless defined? ENV_NAME
-
-      require 'yaml'
-
-      def load_local_configuration(environ=nil)
-        env_filename = 'environments/' + (environ.nil? ? 'development' : environ) + '.yaml'
-        if File.exists?(env_filename)
-          @config.merge!(YAML.load_file(env_filename).symbolize_keys)
-        end
+    def load_navigation_data(filename='navigation.yaml')
+      if File.exists?(filename)
+        nav_data = YAML.load_file(filename).symbolize_keys
+        # Attach nav_data to global configuration
+        @config[:navigation] = nav_data
+      else
+        raise RuntimeError.new("Navigation data file #{filename} does not exist")
       end
-
     end
 
   end
 
 end
-
-include Rfc1459::Newblog::Environments

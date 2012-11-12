@@ -1,4 +1,4 @@
-# Rakefile - master Rakefile for newblog
+# lib/newblog.rb - top-level wrapper for Newblog library
 # Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,27 +14,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Add "lib" to the current load path
-$:.unshift File.expand_path("../lib", __FILE__)
-
-# Import nanoc built-in tasks
-require 'nanoc/tasks'
-
-# Load tasks
-require 'newblog/tasks'
-
-include Rfc1459::Newblog::Tasks
-
-namespace :publish do
-
-  desc "Compile and publish in staging mode"
-  Rfc1459::Newblog::Tasks::Publish.new :staging do |t|
-    t.mode = :staging
+module Rfc1459
+  module Newblog
   end
-
 end
 
-desc "Compile and publish in production mode"
-Rfc1459::Newblog::Tasks::Publish.new do |t|
-  t.mode = :production
-end
+require 'newblog/environments'
+require 'newblog/navigation'
