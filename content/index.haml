@@ -25,7 +25,7 @@ nav_id: home
     Abbiate un po' di pazienza, sto lavorando (anche) per voi ;-)
 
 - unless articles.empty?
-  - articles.each_with_index do |article, i|
+  - sorted_articles.each_with_index do |article, i|
     - if i > 0
       %hr
     = render('_article_partial', {:item => article, :content => article.compiled_content, :embedded => true})
