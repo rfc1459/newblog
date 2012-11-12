@@ -93,7 +93,7 @@ module Rfc1459::Newblog::Tasks
 
         task :prepare => [:apply_quilt, @work_area, font_dir, font_awesome_less, :unapply_quilt]
 
-        desc "Build assets"
+        # Build assets
         task :build => [ :prepare ] do
           sh %{make -C #{@work_area} bootstrap}
           Dir["#{@work_area}/bootstrap/css/*.css"].each do |f|
