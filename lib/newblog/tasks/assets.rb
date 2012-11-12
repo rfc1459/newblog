@@ -49,7 +49,7 @@ module Rfc1459::Newblog::Tasks
       CLEAN.include(@work_area)
       CLOBBER.include(@target_dir)
 
-      task @name => "#{@name}:build"
+      task @name => [ @target_dir ]
 
       namespace(self.name) do
 
@@ -94,7 +94,8 @@ module Rfc1459::Newblog::Tasks
         task :prepare => [:apply_quilt, @work_area, font_dir, font_awesome_less, :unapply_quilt]
 
         # Build assets
-        task :build => [ :prepare ] do
+        directory @target_dir
+        file @target_dir => [ :prepare ] do
           sh %{make -C #{@work_area} bootstrap}
           Dir["#{@work_area}/bootstrap/css/*.css"].each do |f|
             # Remove non-minified CSSes

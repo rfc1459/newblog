@@ -32,14 +32,14 @@ CLOBBER.include("tmp")
 namespace :publish do
 
   desc "Compile and publish in staging mode"
-  Publish.new :staging do |t|
+  Publish.new :staging => [ "rake:assets" ] do |t|
     t.mode = :staging
   end
 
 end
 
 desc "Compile and publish in production mode"
-Publish.new do |t|
+Publish.new :publish => :assets do |t|
   t.mode = :production
 end
 
