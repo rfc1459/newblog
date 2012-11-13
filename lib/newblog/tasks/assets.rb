@@ -41,26 +41,20 @@ module Rfc1459::Newblog::Tasks
     attr_accessor :work_area, :source_dir, :target_dir
 
     def define
-      # Set a default description if the caller didn't give one
-      unless Rake.application.last_comment
-        desc "Generate blog assets"
-      end
-
       CLEAN.include(@work_area)
       CLOBBER.include(@target_dir)
+
+      # Set a default description if the caller didn't give one
+      unless Rake.application.last_comment
+        desc "Generate blog assets."
+      end
 
       task @name => [ @target_dir ]
 
       namespace(self.name) do
 
-        # Initialize required Git submodules
-        task :submodules do
-          sh %{git submodule init}
-          sh %{git submodule update}
-        end
-
         # Apply quilt patches
-        task :apply_quilt => [ :submodules ] do
+        task :apply_quilt do
           sh %{quilt push -a}
         end
 
@@ -103,7 +97,6 @@ module Rfc1459::Newblog::Tasks
           end
           # Remove non-minified js
           rm "#{@work_area}/bootstrap/js/bootstrap.js"
-          mkdir_p @target_dir
           cp_r "#{@work_area}/bootstrap", "#{@target_dir}/bootstrap"
           rm_rf @work_area
           cp "#{@source_dir}/overrides.css", "#{@target_dir}/bootstrap/css"
