@@ -18,10 +18,12 @@ usage       'create-post [options] slug'
 aliases     :create_post, :cp
 summary     'create a new blog post'
 description <<-EOS
-Create a new blog post in the current site using today's date unless specified otherwise.
+Create a new blog post in the current site. Without any option, it defaults
+to a Markdown-formatted post filed on the current day with the current system
+username as author.
 EOS
 
-required :f, :format, 'specify post template format (currently supported: erb, haml, md)' do |value, cmd|
+required :f, :format, 'specify post template format (currently supported: md*, haml, erb)' do |value, cmd|
   unless ['erb', 'haml', 'md'].include? value
     raise Nanoc::Errors::GenericTrivial, "Invalid post format specified"
   end
@@ -36,7 +38,7 @@ required :D, :date, 'specify post date in YYYY/MM/DD format' do |value, cmd|
     end
 end
 
-required :a, :author, 'specify the author'
+required :a, :author, "specify the author (default: #{ENV['USER']})"
 required :c, :vcs, 'specify the VCS to use'
 
 class CreatePost < ::Nanoc::CLI::CommandRunner
