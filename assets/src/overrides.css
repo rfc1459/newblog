@@ -32,5 +32,7 @@ body {
 
 /* Content of embedded gists MUST NOT be wrapped */
 .gist-highlight pre {
-  white-space: nowrap;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
