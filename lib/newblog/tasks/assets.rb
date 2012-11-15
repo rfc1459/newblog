@@ -49,7 +49,7 @@ module Rfc1459::Newblog::Tasks
         desc "Generate blog assets."
       end
 
-      task @name => [ @target_dir ]
+      task @name => [ "#{@name}:build" ]
 
       namespace(self.name) do
 
@@ -99,8 +99,19 @@ module Rfc1459::Newblog::Tasks
           rm "#{@work_area}/bootstrap/js/bootstrap.js"
           cp_r "#{@work_area}/bootstrap", "#{@target_dir}/bootstrap"
           rm_rf @work_area
-          cp "#{@source_dir}/overrides.css", "#{@target_dir}/bootstrap/css"
         end
+
+        # Minify CSS files
+        rule '.min.css' => [
+          proc { |target| File.join @source_dir, File.basename(target).gsub(/\.min\.css$/, '.css') }
+        ] do |t|
+          sh %{recess --compress #{t.source} > #{t.name}}
+        end
+
+        overrides_min_css = "#{@target_dir}/bootstrap/css/overrides.min.css"
+        file overrides_min_css => [ @target_dir, "#{@source_dir}/overrides.css" ]
+
+        task :build => [ @target_dir, overrides_min_css ]
 
       end
     end
