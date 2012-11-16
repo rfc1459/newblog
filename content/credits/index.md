@@ -20,6 +20,7 @@ Stack software
   * [RubyGems][]
   * [nanoc][]
   * [kramdown][]
+  * [kramdown-gist][]
   * una quantità abnorme di librerie esterne
   * tanto olio di gomito
 
@@ -49,6 +50,7 @@ Contenuti
 [RubyGems]: http://rubygems.org/
 [nanoc]: http://nanoc.stoneship.org/
 [kramdown]: http://kramdown.rubyforge.org/
+[kramdown-gist]: https://github.com/rfc1459/kramdown-gist/
 [bootstrap]: http://twitter.github.com/bootstrap/
 [FontAwesome]: http://fortawesome.github.com/Font-Awesome/
 [webfonts]: http://www.google.com/webfonts
