@@ -1,5 +1,10 @@
 source :rubygems
 
+# RVM metadata
+
+#ruby=1.9.3
+#ruby-gemset=newblog
+
 gem 'nanoc'
 gem 'fssm'
 gem 'mime-types'
