@@ -37,6 +37,22 @@ def is_current_item?(nav_entry)
   not @item[:nav_id].nil? and nav_entry.has_key?(:nav_id) and @item[:nav_id] == nav_entry[:nav_id]
 end
 
+def front_page_articles
+  # FIXME: replace hardcoded limit with config item
+  # FIXME: caching (this function is called twice...)
+  sorted_articles.slice(0, 15)
+end
+
+def mathjax_required?
+  if is_front_page?
+    front_page_articles.reduce(false) do |required, item|
+      required | item[:mathjax_required]
+    end
+  else
+    @item[:mathjax_required]
+  end
+end
+
 def url_for_article(item)
   url_components = strip_posts_prefix(item.identifier).gsub('-', '/').gsub('_', '-').split('/')
   # ["", "YYYY", "MM", "DD", "slug"] -> ["", "YYYY", "MM", "slug", ""]

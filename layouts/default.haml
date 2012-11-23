@@ -27,7 +27,9 @@
     / IE Sucks
     /[if lt IE 9]
       %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
-    %script{:type => "text/javascript", :src => "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"}
+    - needs_mathjax = mathjax_required?
+    - if needs_mathjax
+      %script{:type => "text/javascript", :src => "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"}
 
     / Shortcut icons et al.
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
@@ -79,7 +81,8 @@
     -# Javascript stuff
     %script{:src => "http://code.jquery.com/jquery-latest.js"}
     %script{:src => "/js/bootstrap.min.js"}
-    %script{:src => "/js/mathjax_config.js"}
+    - if needs_mathjax
+      %script{:src => "/js/mathjax_config.js"}
     - if @config[:disqus_enabled]
       - if is_front_page? or @item[:kind] == 'article'
         %script{:src => "/js/disqus_count.js"}
