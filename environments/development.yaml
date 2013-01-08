@@ -15,3 +15,6 @@ blog_name: "Rehash"
 
 # Blog tagline
 blog_tagline: "shuffling things around"
+
+# Author name (for Atom feed)
+author_name: "Your-name-here"

@@ -97,7 +97,7 @@
       icon: "tags"
     -
       title: "Feed (atom)"
-      href: "#"
+      href: "/atom.xml"
       icon: "rss"
     -
       title: "Login"
