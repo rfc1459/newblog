@@ -1,7 +1,7 @@
 Index: newblog/assets/src/bootstrap/less/bootstrap.less
 ===================================================================
---- newblog.orig/assets/src/bootstrap/less/bootstrap.less	2012-11-03 14:23:07.000000000 +0100
-+++ newblog/assets/src/bootstrap/less/bootstrap.less	2012-11-03 14:44:41.000000000 +0100
+--- newblog.orig/assets/src/bootstrap/less/bootstrap.less	2013-01-08 21:17:52.000000000 +0100
++++ newblog/assets/src/bootstrap/less/bootstrap.less	2013-01-08 21:18:32.000000000 +0100
 @@ -27,7 +27,7 @@
  @import "tables.less";
  
@@ -13,8 +13,8 @@ Index: newblog/assets/src/bootstrap/less/bootstrap.less
  @import "component-animations.less";
 Index: newblog/assets/src/bootstrap/Makefile
 ===================================================================
---- newblog.orig/assets/src/bootstrap/Makefile	2012-11-03 14:23:06.000000000 +0100
-+++ newblog/assets/src/bootstrap/Makefile	2012-11-03 14:45:12.000000000 +0100
+--- newblog.orig/assets/src/bootstrap/Makefile	2013-01-08 21:17:52.000000000 +0100
++++ newblog/assets/src/bootstrap/Makefile	2013-01-08 21:18:32.000000000 +0100
 @@ -22,7 +22,7 @@
  	@recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
  	@echo "Compiling LESS with Recess...               ${CHECK} Done"
@@ -37,3 +37,18 @@ Index: newblog/assets/src/bootstrap/Makefile
  	recess --compile ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
  	recess --compress ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
  	recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
+Index: newblog/assets/src/fontawesome/less/font-awesome.less
+===================================================================
+--- newblog.orig/assets/src/fontawesome/less/font-awesome.less	2013-01-08 21:17:52.000000000 +0100
++++ newblog/assets/src/fontawesome/less/font-awesome.less	2013-01-08 21:18:58.000000000 +0100
+@@ -79,9 +79,8 @@
+ .btn, .nav {
+   [class^="icon-"],
+   [class*=" icon-"] {
+-    display: inline;
+     /* keeps button heights with and without icons the same */
+-    line-height: .6em;
++    line-height: .7em;
+     &.icon-spin {
+       display: inline-block;
+     }

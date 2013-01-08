@@ -21,8 +21,8 @@
     - block[:entries].each do |item|
       %li{:class => is_current_item?(item) && "active"}
         - if item.has_key?(:icon)
-          %a{:href => item[:href]}
-            %i{:class => "icon-#{item[:icon]}"}
-            = item[:title]
+          %a{:href => item[:href]}<
+            = succeed " #{item[:title]}" do
+              %i{:class => "icon-#{item[:icon]}"}
         - else
           %a{:href => item[:href]}= item[:title]
