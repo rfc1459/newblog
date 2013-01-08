@@ -80,6 +80,10 @@ route '/icons/*/' do
   item[:content_filename].gsub(/^content\/icons/, '')
 end
 
+route '/img/*/' do
+  item[:content_filename].gsub(/^content/, '')
+end
+
 route '*' do
   route_path(item)
 end
