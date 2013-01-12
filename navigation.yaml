@@ -99,7 +99,3 @@
       title: "Feed (atom)"
       href: "/atom.xml"
       icon: "rss"
-    -
-      title: "Login"
-      href: "http://trololololololololololo.com/" # :-)
-      icon: "lock"
