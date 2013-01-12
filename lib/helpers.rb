@@ -38,9 +38,8 @@ def is_current_item?(nav_entry)
 end
 
 def front_page_articles
-  # FIXME: replace hardcoded limit with config item
   # FIXME: caching (this function is called twice...)
-  sorted_articles.slice(0, 15)
+  sorted_articles.slice(0, @config[:posts_per_page])
 end
 
 def mathjax_required?
@@ -134,4 +133,10 @@ def created_at(item)
   rescue
   end
   date
+end
+
+def article_summary(item, read_more_text="Read more...", separator="<!--MORE-->")
+  summary,body = item.compiled_content.split(separator)
+  return item.compiled_content unless body
+  return summary
 end

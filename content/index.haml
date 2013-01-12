@@ -2,32 +2,13 @@
 nav_id: home
 ---
 
-.alert.alert-info
-  %h2
-    %i.icon-warning-sign.icon-large
-    Work in progress
-
-  %p
-    Al momento il blog non &egrave; tale, visto che mancano:
-
-  %ul
-    %li l'archivio
-    %li i tag
-    %li le categorie
-    %li
-      pi&ugrave; in generale un'impaginazione
-      %em decente
-      dei post
-    %li i contenuti!
-
-  %p
-    Abbiate un po' di pazienza, sto lavorando (anche) per voi ;-)
-
 - articles_to_display = front_page_articles
 - unless articles_to_display.empty?
-  - articles_to_display.each_with_index do |article, i|
-    - if i > 0
-      %hr
-    = render('_article_partial', {:item => article, :content => article.compiled_content, :embedded => true})
+  - hero = articles_to_display.slice!(0)
+  = render('_frontpage_article', {:item => hero, :hero => true})
+  - unless articles_to_display.empty?
+    .row-fluid
+      - articles_to_display.each do |article|
+        = render('_frontpage_article', :item => article)
 - else
   Non &egrave; presente nessun articolo :-(

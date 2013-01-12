@@ -1,4 +1,4 @@
--# layouts/_article_partial.haml - Article template fragment
+-# layouts/_frontpage_article.haml - Article fragment for front page
 -# Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 -#
 -# This program is free software: you can redistribute it and/or modify
@@ -14,15 +14,21 @@
 -# You should have received a copy of the GNU General Public License
 -# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-= render('_metadata_partial', {:item => item, :embedded => false})
+- hero ||= false
 
--# Article body
-= content
-
--# DISQUS form
--if @config[:disqus_enabled]
-  #disqus_thread.comment-box
+- if hero
+  - cls = "hero-unit"
 - else
-  .alert.alert-warning
-    %i.icon-warning-sign.icon-large
-    Staging mode, comments are disabled
+  - cls = "span4"
+%div{:class => cls}
+  - if hero
+    %h1= item[:title]
+  - else
+    %h2= item[:title]
+  = render('_metadata_partial', {:item => item, :embedded => true})
+  = article_summary(item)
+  %p
+    - if hero
+      %a.btn.btn-primary.btn-large{:href => url_for_article(item)} Leggi &raquo;
+    - else
+      %a.btn{:href => url_for_article(item)} Leggi &raquo;

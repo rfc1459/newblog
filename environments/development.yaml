@@ -18,3 +18,6 @@ blog_tagline: "shuffling things around"
 
 # Author name (for Atom feed)
 author_name: "Your-name-here"
+
+# How many posts should be displayed on the index page
+posts_per_page: 16
