@@ -14,15 +14,22 @@
 -# You should have received a copy of the GNU General Public License
 -# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-= render('_metadata_partial', {:item => item, :embedded => false})
+- embedded ||= false
+
+- if embedded
+  %a{:href => url_for(item)}
+    %h2= item[:title]
+
+= render('_metadata_partial', {:item => item, :embedded => embedded})
 
 -# Article body
 = content
 
 -# DISQUS form
--if @config[:disqus_enabled]
-  #disqus_thread.comment-box
-- else
-  .alert.alert-warning
-    %i.icon-warning-sign.icon-large
-    Staging mode, comments are disabled
+- unless embedded
+  -if @config[:disqus_enabled]
+    #disqus_thread.comment-box
+  - else
+    .alert.alert-warning
+      %i.icon-warning-sign.icon-large
+      Staging mode, comments are disabled

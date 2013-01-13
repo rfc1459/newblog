@@ -18,6 +18,7 @@
 $:.unshift File.expand_path("..", __FILE__)
 
 require 'newblog'
+require 'nokogiri'
 
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
@@ -135,8 +136,12 @@ def created_at(item)
   date
 end
 
-def article_summary(item, read_more_text="Read more...", separator="<!--MORE-->")
-  summary,body = item.compiled_content.split(separator)
-  return item.compiled_content unless body
-  return summary
+def article_summary(item)
+  root = Nokogiri::HTML::DocumentFragment.parse(item.compiled_content)
+  more = root.css('#more')
+  # Fast exit
+  return item.compiled_content, false if more.empty?
+  more.xpath('following-sibling::*').remove
+  more.remove
+  return root.to_html, true
 end

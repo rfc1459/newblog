@@ -4,11 +4,13 @@ nav_id: home
 
 - articles_to_display = front_page_articles
 - unless articles_to_display.empty?
-  - hero = articles_to_display.slice!(0)
-  = render('_frontpage_article', {:item => hero, :hero => true})
-  - unless articles_to_display.empty?
-    .row-fluid
-      - articles_to_display.each do |article|
-        = render('_frontpage_article', :item => article)
+  - articles_to_display.each_with_index do |article, i|
+    - if i > 0
+      %hr
+    - content, has_more = article_summary(article)
+    = render('_article_partial', {:item => article, :content => content, :embedded => true})
+    - if has_more
+      %p
+        %a.btn{:href => "#{url_for(article)}#more"} Continua a leggere &raquo;
 - else
   Non &egrave; presente nessun articolo :-(
