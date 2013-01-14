@@ -37,18 +37,3 @@ Index: newblog/assets/src/bootstrap/Makefile
  	recess --compile ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
  	recess --compress ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
  	recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
-Index: newblog/assets/src/fontawesome/less/font-awesome.less
-===================================================================
---- newblog.orig/assets/src/fontawesome/less/font-awesome.less	2013-01-08 21:17:52.000000000 +0100
-+++ newblog/assets/src/fontawesome/less/font-awesome.less	2013-01-08 21:18:58.000000000 +0100
-@@ -79,9 +79,8 @@
- .btn, .nav {
-   [class^="icon-"],
-   [class*=" icon-"] {
--    display: inline;
-     /* keeps button heights with and without icons the same */
--    line-height: .6em;
-+    line-height: .7em;
-     &.icon-spin {
-       display: inline-block;
-     }
