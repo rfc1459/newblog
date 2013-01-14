@@ -19,7 +19,7 @@
 
 .metadata
   %small
-    Scritto il #{item[:created_at]} da #{author}
+    Scritto il #{format_date(item[:created_at])} da #{author}
     - if embedded and @config[:disqus_enabled]
       &mdash;
       %a{:href => "#{url_for_article(item)}#disqus_thread", :data => {:disqus_identifier => url_for_article(item)}} Commenti

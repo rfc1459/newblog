@@ -145,3 +145,12 @@ def article_summary(item)
   more.remove
   return root.to_html, true
 end
+
+def format_date(date_string)
+  begin
+    d = Date.parse date_string
+    d.strftime('%d/%m/%Y')
+  rescue
+    date_string
+  end
+end

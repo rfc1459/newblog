@@ -63,10 +63,12 @@ class CreatePost < ::Nanoc::CLI::CommandRunner
     self.set_vcs(options[:vcs])
 
     # Baseline date for post
+    timestamp = nil
     if options[:date]
       date = Date.strptime(options[:date], '%Y/%m/%d')
     else
       date = Date.today
+      timestamp = DateTime.now
     end
 
     # Post format (default: markdown)
@@ -91,7 +93,7 @@ class CreatePost < ::Nanoc::CLI::CommandRunner
     data_source = self.site.data_sources[0]
     data_source.create_item(
       "FIXME: content here, please\n",
-      { :title => slug, :kind => "article", :author => author },
+      { :title => slug, :kind => "article", :author => author, :created_at => timestamp.to_s },
       identifier,
       { :extension => ".#{fmt}" }
     )
