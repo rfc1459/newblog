@@ -28,6 +28,10 @@ preprocess do
 
   # Update timestamps
   update_articles_timestamps
+
+  items.select { |i| not i.binary? }.each do |item|
+    item[:layout] = "none" unless item[:layout] || File.extname(route_path(item)) == '.html'
+  end
 end
 
 compile '/assets/*' do
@@ -67,7 +71,6 @@ compile '*' do
       raise "No filter for #{item.identifier}"
     end
 
-    item[:layout] = "none" unless item[:layout] || File.extname(route_path(item)) == '.html'
     layout 'default' unless item[:layout] == "none"
   end
 end
