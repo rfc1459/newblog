@@ -38,10 +38,16 @@ def is_current_item?(nav_entry)
   not @item[:nav_id].nil? and nav_entry.has_key?(:nav_id) and @item[:nav_id] == nav_entry[:nav_id]
 end
 
-def front_page_articles
-  # FIXME: caching (this function is called twice...)
-  sorted_articles.slice(0, @config[:posts_per_page])
+module Rfc1459::Newblog::Cached
+  extend Nanoc::Memoization
+
+  def front_page_articles
+    sorted_articles.slice(0, @config[:posts_per_page])
+  end
+  memoize :front_page_articles
+
 end
+include Rfc1459::Newblog::Cached
 
 def mathjax_required?
   if is_front_page?

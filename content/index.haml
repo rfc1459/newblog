@@ -2,9 +2,8 @@
 nav_id: home
 ---
 
-- articles_to_display = front_page_articles
-- unless articles_to_display.empty?
-  - articles_to_display.each_with_index do |article, i|
+- unless front_page_articles.empty?
+  - front_page_articles.each_with_index do |article, i|
     - if i > 0
       %hr
     - content, has_more = article_summary(article)
