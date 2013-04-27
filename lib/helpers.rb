@@ -19,6 +19,7 @@ $:.unshift File.expand_path("..", __FILE__)
 
 require 'newblog'
 require 'nokogiri'
+require 'redcarpet'
 
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
@@ -124,6 +125,16 @@ def route_assets(item)
   item[:content_filename].gsub(/^content\/assets\/[^\/]+/, '').gsub(/_/, '.')
 end
 
+class PygmentsRenderer < Redcarpet::Render::HTML
+  def block_code(code, language)
+    if language.nil?
+      "<pre><code>#{code.gsub(/[<>]/, '<' => '&lt;', '>' => '&gt;')}</code></pre>\n"
+    else
+      "<div class=\"highlight\"><pre><code class=\"language-#{language}\">\n#{code.gsub(/[<>]/, '<' => '&lt;', '>' => '&gt;')}\n</code></pre></div>\n"
+    end
+  end
+end
+
 private
 
 def strip_posts_prefix(id)
@@ -144,7 +155,7 @@ end
 
 def article_summary(item)
   root = Nokogiri::HTML::DocumentFragment.parse(item.compiled_content)
-  more = root.css('#more')
+  more = root.xpath('descendant::comment()[.=" break "]')
   # Fast exit
   return item.compiled_content, false if more.empty?
   more.xpath('following-sibling::*').remove

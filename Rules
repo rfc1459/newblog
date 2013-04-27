@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'kramdown-gist'
-
 preprocess do
   # Merge config.yaml with deployment-dependent config
   load_local_configuration ENV[ENV_NAME]
@@ -66,10 +64,12 @@ compile '*' do
     elsif ext == 'haml' || ext.nil?
       filter :haml
     elsif ext == 'md' || ext == 'markdown'
-      filter :kramdown, { :input => 'KramdownGist' }
+      filter :redcarpet, :options => {:fenced_code_blocks => true}, :renderer => PygmentsRenderer
     else
       raise "No filter for #{item.identifier}"
     end
+
+    filter :colorize_syntax, :default_colorizer => :pygmentsrb
 
     layout 'default' unless item[:layout] == "none"
   end
