@@ -144,7 +144,7 @@ end
 
 def article_summary(item)
   root = Nokogiri::HTML::DocumentFragment.parse(item.compiled_content)
-  more = root.css('#more')
+  more = root.xpath('descendant::comment()[.=" break "]')
   # Fast exit
   return item.compiled_content, false if more.empty?
   more.xpath('following-sibling::*').remove
