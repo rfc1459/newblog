@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 
 # RVM metadata
 
@@ -8,7 +8,6 @@ source :rubygems
 gem 'nanoc'
 gem 'listen', '0.7.3'
 gem 'mime-types'
-gem 'kramdown'
 gem 'nokogiri'
 gem 'adsf'
 gem 'haml'
@@ -17,7 +16,8 @@ gem 'activesupport'
 gem 'uglifier'
 gem 'systemu'
 gem 'rake', '~> 0.9.2.2'
-gem 'kramdown-gist'
+gem 'redcarpet'
+gem 'pygments.rb'
 
 # Listen dependencies
 gem 'rb-fsevent', :require => false  # OS X
