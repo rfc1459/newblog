@@ -50,8 +50,10 @@ Yep, that's it.
 License
 -------
 
-Due to the (indirect) dependency on [kramdown][], I had to license newblog
-under the terms of GPLv3. See `COPYING` for more information.
+All code of newblog is licensed under the terms of GPLv3. See `COPYING` for
+more information.
+
+All content is licensed under [CC-BY-3.0][].
 
 
 Known issues
@@ -64,3 +66,4 @@ Indeed.
 [Bootstrap]: http://getbootstrap.com/
 [jekyll]: http://jekyllrb.com/
 [kramdown]: http://kramdown.rubyforge.org/
+[CC-BY-3.0]: http://creativecommons.org/licenses/by/3.0/
