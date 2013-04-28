@@ -1,0 +1,23 @@
+# Master killswitch for DISQUS
+disqus_enabled: true
+
+# Short-name for DISQUS
+disqus_shortname: "level28-blog"
+
+# Are we running in developer mode?
+disqus_developer: 0
+
+# Base URL for atom feed
+base_url: "http://blog.level28.org"
+
+# Blog name
+blog_name: "Rehash"
+
+# Blog tagline
+blog_tagline: "shuffling things around"
+
+# Author name
+author_name: "Matteo Panella"
+
+# How many posts should be displayed on the index page
+posts_per_page: 16
