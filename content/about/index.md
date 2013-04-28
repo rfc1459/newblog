@@ -65,7 +65,7 @@ Ad eccezione della fuffa web 2.0 (presente nella navigazione), i miei dati di
 contatto sono reperibili nell'oggetto `MP7302-RIPE` del database whois di
 RIPE NCC.
 
-La mia chiave PGP privata ha id `7A3CCD20` ed è disponibile su un qualsiasi
+La mia chiave PGP personale ha id `7A3CCD20` ed è disponibile su un qualsiasi
 keyserver membro di `pool.sks-keyservers.net`. In alternativa potete trovarla
 nell'oggetto `PGPKEY-7A3CCD20` del database whois di RIPE NCC. Il fingerprint
 della chiave è `C84E 4C8E 1FC3 095D C193 0BC4 A946 1248 7A3C CD20`.
