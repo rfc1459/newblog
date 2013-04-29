@@ -25,6 +25,7 @@ include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
 include Rfc1459::Newblog::Environments
 include Rfc1459::Newblog::Navigation
+include Rfc1459::Newblog::Archives
 
 def get_title
   subtitle = is_front_page? ? "Home" : @item[:title]

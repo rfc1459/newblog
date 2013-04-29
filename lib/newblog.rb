@@ -21,3 +21,4 @@ end
 
 require 'newblog/environments'
 require 'newblog/navigation'
+require 'newblog/archives'
