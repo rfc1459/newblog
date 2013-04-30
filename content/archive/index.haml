@@ -1,0 +1,25 @@
+---
+title: Archivio
+is_hidden: true
+---
+
+%p
+  Benvenuti negli archivi di #{@config[:blog_name]}. Se siete qui, probabilmente state cercando
+  un vecchio post ed altrettanto probabilmente mi state maledicendo perché non c'è un motore
+  di ricerca integrato ('zzi vostri).
+
+%p
+  In ogni caso, presumo abbiate una vaga idea
+  %em almeno
+  dell'anno in cui il post è stato scritto, quindi potete scegliere tra i vari anni o i singoli mesi.
+  Per i duri di comprendonio: anni e mesi assenti significano che non ci sono post per quel lasso di
+  tempo.
+
+- sorted_articles.group_by{ |i| Date.parse(i[:created_at]).year }.each do |year, by_year|
+  %h2
+    %a{:href => "#{@config[:base_url]}/#{year}/"}= year
+
+  %ul
+    - by_year.group_by{ |i| Date.parse(i[:created_at]).month }.keys.each do |month|
+      %li
+        %a{:href => "%s/%d/%02d/" % [@config[:base_url], year, month]}= ITMONTHNAMES[month]
