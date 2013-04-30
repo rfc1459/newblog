@@ -65,11 +65,10 @@ compile '*' do
       filter :haml
     elsif ext == 'md' || ext == 'markdown'
       filter :redcarpet, :options => {:fenced_code_blocks => true}, :renderer => PygmentsRenderer
+      filter :colorize_syntax, :default_colorizer => :pygmentsrb
     else
       raise "No filter for #{item.identifier}"
     end
-
-    filter :colorize_syntax, :default_colorizer => :pygmentsrb
 
     layout 'default' unless item[:layout] == "none"
   end
