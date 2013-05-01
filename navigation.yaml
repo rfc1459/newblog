@@ -88,12 +88,9 @@
       href: "/archive/"
       icon: "calendar"
     -
-      title: "Categorie"
-      href: "#"
-      icon: "list-ul"
-    -
       title: "Tag"
-      href: "#"
+      href: "/tags/"
+      nav_id: "tags"
       icon: "tags"
     -
       title: "Feed (atom)"

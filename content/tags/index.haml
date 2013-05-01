@@ -1,0 +1,17 @@
+---
+title: Tag
+is_hidden: true
+nav_id: tags
+---
+
+%p
+  Stai cercando un post di cui ricordi l'argomento ma non la data? Sei nel posto sbagliat^W giusto!
+
+- unless all_tags.empty?
+  %ul
+    - all_tags.each do |tag|
+      %li
+        %a{:href => "#{@config[:base_url]}/tags/#{tag}"}= tag
+- else
+  %p
+    Mi spiace, nessun post è stato taggato. Buona fortuna...

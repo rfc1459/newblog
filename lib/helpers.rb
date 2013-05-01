@@ -49,6 +49,17 @@ module Rfc1459::Newblog::Cached
   end
   memoize :front_page_articles
 
+  def all_tags
+    tags = []
+    articles.each do |post|
+      unless post[:tags].nil?
+        tags.concat(post[:tags])
+      end
+    end
+    tags.sort!.uniq
+  end
+  memoize :all_tags
+
 end
 include Rfc1459::Newblog::Cached
 
