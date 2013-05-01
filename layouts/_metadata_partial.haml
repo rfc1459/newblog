@@ -20,6 +20,9 @@
 .metadata
   %small
     Scritto il #{format_date(item[:created_at])} da #{author}
+    - unless item[:tags].nil? or item[:tags].empty?
+      = succeed " " + tags_for(item, :base_url => "#{@config[:base_url]}/tags/", :none_text => "(nessuno)") do
+        %i{:class => "icon-tags"}
     - if embedded and @config[:disqus_enabled]
       &mdash;
       %a{:href => "#{url_for_article(item)}#disqus_thread", :data => {:disqus_identifier => url_for_article(item)}} Commenti

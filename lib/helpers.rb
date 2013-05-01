@@ -23,6 +23,7 @@ require 'redcarpet'
 
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::Tagging
 include Rfc1459::Newblog::Environments
 include Rfc1459::Newblog::Navigation
 include Rfc1459::Newblog::Archives
