@@ -3,6 +3,7 @@ title: Fine della pacchia
 kind: article
 author: morpheus
 created_at: '2013-01-14T12:13:46+01:00'
+tags: [ 'rant', 'scrocconi', 'terremoto' ]
 ---
 
 Vi è piaciuto andare nel Mar Rosso, fare viaggi in giro per il Mediterraneo,
