@@ -1,4 +1,4 @@
-# lib/newblog.rb - top-level wrapper for Newblog library
+# lib/newblog/tagging.rb - Tag indexes generation
 # Copyright (C) 2012 Matteo Panella <morpheus@level28.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,12 +14,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module Rfc1459
-  module Newblog
+require 'nanoc'
+
+module Rfc1459::Newblog
+
+  module Tagging
+
+    def render_tag_indexes
+      # Not the most efficient way of doing things, but whatever...
+      all_tags.each do |tag|
+        posts = items_with_tag(tag).sort{ |x,y| Date.parse(x[:created_at]) <=> Date.parse(y[:created_at]) }
+        @items << Nanoc::Item.new(
+          "<%= render('_tag_partial') %>",
+          {
+            :title => "Post taggati '#{tag}'",
+            :posts => posts,
+            :extension => 'erb'
+          },
+          "/tags/#{tag}",
+          :binary => false,
+        )
+      end
+    end
+
   end
 end
-
-require 'newblog/environments'
-require 'newblog/navigation'
-require 'newblog/archives'
-require 'newblog/tagging'

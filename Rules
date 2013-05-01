@@ -28,6 +28,7 @@ preprocess do
   update_articles_timestamps
 
   render_archives
+  render_tag_indexes
 
   items.select { |i| not i.binary? }.each do |item|
     item[:layout] = "none" unless item[:layout] || File.extname(route_path(item)) == '.html'
