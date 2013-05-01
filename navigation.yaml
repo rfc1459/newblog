@@ -86,6 +86,7 @@
     -
       title: "Archivio"
       href: "/archive/"
+      nav_id: "archive"
       icon: "calendar"
     -
       title: "Tag"
