@@ -90,6 +90,7 @@ module Rfc1459::Newblog::Tasks
         # Build assets
         directory @target_dir
         file @target_dir => [ :prepare ] do
+          sh %{cd #{@work_area} && npm install}
           sh %{make -C #{@work_area} bootstrap}
           Dir["#{@work_area}/bootstrap/css/*.css"].each do |f|
             # Remove non-minified CSSes

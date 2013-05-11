@@ -1,7 +1,7 @@
 Index: newblog/assets/src/bootstrap/less/bootstrap.less
 ===================================================================
---- newblog.orig/assets/src/bootstrap/less/bootstrap.less	2013-01-08 21:17:52.000000000 +0100
-+++ newblog/assets/src/bootstrap/less/bootstrap.less	2013-01-08 21:18:32.000000000 +0100
+--- newblog.orig/assets/src/bootstrap/less/bootstrap.less	2013-05-11 17:08:57.000000000 +0200
++++ newblog/assets/src/bootstrap/less/bootstrap.less	2013-05-11 17:12:41.000000000 +0200
 @@ -27,7 +27,7 @@
  @import "tables.less";
  
@@ -13,10 +13,10 @@ Index: newblog/assets/src/bootstrap/less/bootstrap.less
  @import "component-animations.less";
 Index: newblog/assets/src/bootstrap/Makefile
 ===================================================================
---- newblog.orig/assets/src/bootstrap/Makefile	2013-01-08 21:17:52.000000000 +0100
-+++ newblog/assets/src/bootstrap/Makefile	2013-01-08 21:18:32.000000000 +0100
+--- newblog.orig/assets/src/bootstrap/Makefile	2013-05-11 17:08:56.000000000 +0200
++++ newblog/assets/src/bootstrap/Makefile	2013-05-11 17:15:14.000000000 +0200
 @@ -22,7 +22,7 @@
- 	@recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+ 	@./node_modules/.bin/recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
  	@echo "Compiling LESS with Recess...               ${CHECK} Done"
  	@node docs/build
 -	@cp img/* docs/assets/img/
@@ -24,16 +24,40 @@ Index: newblog/assets/src/bootstrap/Makefile
  	@cp js/*.js docs/assets/js/
  	@cp js/tests/vendor/jquery.js docs/assets/js/
  	@echo "Compiling documentation...                  ${CHECK} Done"
-@@ -63,10 +63,10 @@
+@@ -62,7 +62,7 @@
+ # recess & uglifyjs are required
  #
  
- bootstrap:
+-bootstrap: bootstrap-img bootstrap-css bootstrap-js
++bootstrap: bootstrap-font bootstrap-css bootstrap-js
+ 
+ 
+ #
+@@ -92,14 +92,14 @@
+ 	./node_modules/.bin/recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.min.css
+ 
+ #
+-# IMAGES
++# FONTS
+ #
+ 
+-bootstrap-img: bootstrap/img/*
++bootstrap-font: bootstrap/font/*
+ 
+-bootstrap/img/*: img/*
 -	mkdir -p bootstrap/img
-+	mkdir -p bootstrap/font
- 	mkdir -p bootstrap/css
- 	mkdir -p bootstrap/js
 -	cp img/* bootstrap/img/
++bootstrap/font/*: font/*
++	mkdir -p bootstrap/font
 +	cp font/* bootstrap/font/
- 	recess --compile ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
- 	recess --compress ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
- 	recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
+ 
+ 
+ #
+@@ -123,4 +123,4 @@
+ 	watchr -e "watch('less/.*\.less') { system 'make' }"
+ 
+ 
+-.PHONY: docs watch gh-pages bootstrap-img bootstrap-css bootstrap-js
+\ No newline at end of file
++.PHONY: docs watch gh-pages bootstrap-font bootstrap-css bootstrap-js
+\ No newline at end of file
