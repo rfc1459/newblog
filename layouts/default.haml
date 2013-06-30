@@ -93,5 +93,6 @@
         %script{:src => "/js/disqus_count.js"}
       - if @item[:kind] == 'article'
         :javascript
-          disqus_id = "#{url_for_article(@item)}"
+          disqus_identifier = "#{url_for_article(@item)}"
+          disqus_url = "#{@config[:disqus_base_url]}#{url_for_article(@item)}"
         %script{:src => "/js/disqus.js"}

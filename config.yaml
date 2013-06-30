@@ -76,6 +76,9 @@ watcher:
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
 
+# Disqus base url
+disqus_base_url: 'http://blog.level28.org'
+
 # Deployment configuration
 deploy:
   production:
