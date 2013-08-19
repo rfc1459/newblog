@@ -1,6 +1,6 @@
 [submodule "assets/src/bootstrap"]
 	path = assets/src/bootstrap
-	url = git://github.com/twitter/bootstrap.git
+	url = git://github.com/twbs/bootstrap.git
 	ignore = untracked
 [submodule "assets/src/fontawesome"]
 	path = assets/src/fontawesome
