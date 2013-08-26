@@ -48,7 +48,7 @@ Contenuti
 [ruby]: http://www.ruby-lang.org/
 [rvm]: http://rvm.io/
 [RubyGems]: http://rubygems.org/
-[nanoc]: http://nanoc.stoneship.org/
+[nanoc]: http://nanoc.ws/
 [redcarpet]: https://github.com/vmg/redcarpet
 [bootstrap]: http://getbootstrap.com/
 [FontAwesome]: http://fortawesome.github.com/Font-Awesome/
