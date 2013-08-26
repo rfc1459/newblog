@@ -19,8 +19,8 @@ Stack software
   * [rvm][]
   * [RubyGems][]
   * [nanoc][]
-  * [kramdown][]
-  * [kramdown-gist][]
+  * [redcarpet][]
+  * [pygments.rb][pygmentsrb]
   * una quantità abnorme di librerie esterne
   * tanto olio di gomito
 
@@ -49,11 +49,11 @@ Contenuti
 [rvm]: http://rvm.io/
 [RubyGems]: http://rubygems.org/
 [nanoc]: http://nanoc.stoneship.org/
-[kramdown]: http://kramdown.rubyforge.org/
-[kramdown-gist]: https://github.com/rfc1459/kramdown-gist/
-[bootstrap]: http://twitter.github.com/bootstrap/
+[redcarpet]: https://github.com/vmg/redcarpet
+[bootstrap]: http://getbootstrap.com/
 [FontAwesome]: http://fortawesome.github.com/Font-Awesome/
 [webfonts]: http://www.google.com/webfonts
 [jQuery]: http://jquery.com/
 [MathJax]: http://www.mathjax.org/
 [DISQUS]: http://www.disqus.com/
+[pygmentsrb]: https://github.com/tmm1/pygments.rb
