@@ -1,0 +1,45 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256,SHA1
+
+In November 2013 I started transitioning from my old 7A3CCD20 1024/DSA PGP key
+to the new E3CE1BBE 4096/RSA key.
+The old key will not be immediately revoked, but I recommend that it is not
+used anymore.
+
+This transition document is signed with both keys to validate the transition
+and is available on my web site:
+http://blog.level28.org/stuff/key-E3C31BBE.txt
+
+If you have signed my old key, I would appreciate if you would sign my new key
+as well to strenghten the web of trust.
+
+
+The old key is:
+
+pub   1024D/7A3CCD20 2005-09-15 Matteo Panella <matteo.panella@carmat.it>
+Fingerprint: C84E 4C8E 1FC3 095D C193  0BC4 A946 1248 7A3C CD20
+
+The new key is:
+
+pub   4096R/E3CE1BBE 2013-11-03 Matteo Panella <morpheus@level28.org>
+Fingerprint: 1554 736D B705 CA86 A833  4C1F BDD0 3B54 E3CE 1BBE
+
+
+Please contact me if you have any questions about this document or this
+transition.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.17 (GNU/Linux)
+
+iQGcBAEBCAAGBQJSdsxdAAoJEPfS7MCaCqKonrcMAIeZhyuhbQzOx4lu1hseksxl
+MFMwOcGcJEPkMSXP85P6jZ0I/6oCwiVMB0Wz1fp7tK74JuFXH2/5wpD1whB0lOvI
+9LtshK0snKsJakeUt/g9uQUtzYD606BC21jfFk+BF1i9RKLna6+ur90o5MpxXnIn
+RMnGBrDcFir/QCSi8GODE3mzBYHRWUla62CP94L9cg4UzvBPlDbSwHcIp9LPiPfD
+uHqsh+5moTWORi5W5hh2TZgS5yHHQqm1152a++sCcNKSAZ9vwNn3wq/gPjBAtL6d
+Tg30E44Glu0m3+51tjsvz8ILh0VQcTYjC15AYjq6ONFq6HSEOtUEJb3ikJDKq6C7
+gd4LcM+rFv937VNtd8V/BCJGmLuYpnffYyVPixATIrhOBst1NjL004PHybPyP9zG
+ALgiFslN7voG+Zhz/qHwmOxSd07kzYTQfZypnB+Q489a3Gik5Sjq9HRsvdkmYlEF
+FnAEYEjY3rHDLtn+tOMNVY11lHCd2cmznjR1n5UhbohGBAERAgAGBQJSdsxdAAoJ
+EKlGEkh6PM0gWqMAn2famd+uWpqSA0SwxCHrnsbMeukUAJ9ic3Tj9CGmvKMMjKpQ
+SHJ60a1qWA==
+=+kjC
+-----END PGP SIGNATURE-----

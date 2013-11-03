@@ -65,10 +65,15 @@ Ad eccezione della fuffa web 2.0 (presente nella navigazione), i miei dati di
 contatto sono reperibili nell'oggetto `MP7302-RIPE` del database whois di
 RIPE NCC.
 
-La mia chiave PGP personale ha id `7A3CCD20` ed è disponibile su un qualsiasi
+La mia chiave PGP personale ha id `E3CE1BBE` ed è disponibile su un qualsiasi
 keyserver membro di `pool.sks-keyservers.net`. In alternativa potete trovarla
-nell'oggetto `PGPKEY-7A3CCD20` del database whois di RIPE NCC. Il fingerprint
-della chiave è `C84E 4C8E 1FC3 095D C193 0BC4 A946 1248 7A3C CD20`.
+nell'oggetto `PGPKEY-E3CE1BBE` del database whois di RIPE NCC. Il fingerprint
+della chiave è `1554 736D B705 CA86 A833 4C1F BDD0 3B54 E3CE 1BBE`.
+
+Durante l'inizio di novembre 2013 ho eseguito un roll-over delle chiavi PGP,
+per amor di completezza potete trovare uno [statement formale][rollover]
+firmato con la vecchia e la nuova chiave. Siete vivamente pregati di rifirmare
+la nuova chiave e dimenticarvi della vecchia :-)
 
 Un appunto sulle mail:
 
@@ -85,3 +90,4 @@ Un appunto sulle mail:
 [azzurra]: http://www.azzurra.org/
 [moca]: https://github.com/rfc1459/moca/
 [github]: https://github.com/rfc1459/
+[rollover]: /stuff/key-E3CE1BBE.txt

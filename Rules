@@ -43,6 +43,10 @@ compile '/icons/*' do
   # Don't filter icons
 end
 
+compile '/stuff/*' do
+  # Don't filter miscellaneous stuff
+end
+
 compile '/js/*/' do
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
@@ -90,6 +94,10 @@ route '/img/*/' do
 end
 
 route '/images/*/' do
+  item[:content_filename].gsub(/^content/, '')
+end
+
+route '/stuff/*/' do
   item[:content_filename].gsub(/^content/, '')
 end
 
