@@ -1,5 +1,5 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256,SHA1
+Hash: SHA1,SHA256
 
 In November 2013 I started transitioning from my old 7A3CCD20 1024/DSA PGP key
 to the new E3CE1BBE 4096/RSA key.
@@ -8,7 +8,7 @@ used anymore.
 
 This transition document is signed with both keys to validate the transition
 and is available on my web site:
-http://blog.level28.org/stuff/key-E3C31BBE.txt
+http://blog.level28.org/stuff/key-E3CE1BBE.txt
 
 If you have signed my old key, I would appreciate if you would sign my new key
 as well to strenghten the web of trust.
@@ -30,16 +30,16 @@ transition.
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2.0.17 (GNU/Linux)
 
-iQGcBAEBCAAGBQJSdsxdAAoJEPfS7MCaCqKonrcMAIeZhyuhbQzOx4lu1hseksxl
-MFMwOcGcJEPkMSXP85P6jZ0I/6oCwiVMB0Wz1fp7tK74JuFXH2/5wpD1whB0lOvI
-9LtshK0snKsJakeUt/g9uQUtzYD606BC21jfFk+BF1i9RKLna6+ur90o5MpxXnIn
-RMnGBrDcFir/QCSi8GODE3mzBYHRWUla62CP94L9cg4UzvBPlDbSwHcIp9LPiPfD
-uHqsh+5moTWORi5W5hh2TZgS5yHHQqm1152a++sCcNKSAZ9vwNn3wq/gPjBAtL6d
-Tg30E44Glu0m3+51tjsvz8ILh0VQcTYjC15AYjq6ONFq6HSEOtUEJb3ikJDKq6C7
-gd4LcM+rFv937VNtd8V/BCJGmLuYpnffYyVPixATIrhOBst1NjL004PHybPyP9zG
-ALgiFslN7voG+Zhz/qHwmOxSd07kzYTQfZypnB+Q489a3Gik5Sjq9HRsvdkmYlEF
-FnAEYEjY3rHDLtn+tOMNVY11lHCd2cmznjR1n5UhbohGBAERAgAGBQJSdsxdAAoJ
-EKlGEkh6PM0gWqMAn2famd+uWpqSA0SwxCHrnsbMeukUAJ9ic3Tj9CGmvKMMjKpQ
-SHJ60a1qWA==
-=+kjC
+iEYEARECAAYFAlJ3VZsACgkQqUYSSHo8zSCFMgCbBF27U3YUkV2yacISHIi8hznI
+foIAoIjIPZAduC//85n1VuCQ4EaW6svLiQGcBAEBCAAGBQJSd1WbAAoJEPfS7MCa
+CqKo7NwL/1azTgg7lfffBkV65e6opN1sOzRNKEy2smdat4dDeB3gRqztjZKUkMkR
+kWBGJu78ev7dlK3ewV9LfyfXAQeIpKqfjnYqI67yZo9pMRaytU3EtcoLBQvHT9m0
+UWSksP/8HRTYiZBeT4108TF5nhJEKj3/zc1kr2+i2wg+4ZZafLG1w5mMc8p762k9
+IstxbutASiUARMERXo/fRuW27vhysrurYWSWK1XkV+kzSfOB5NCjT/LBi8QOGZh8
+qNfiJUDxI3zNIFT34/ggYcKC/ywKirmgjKsxbzSGCCMM4BS9VBdo+WxdB8uAjzPR
+7lVRB6mZXaT32rQB/CuxrYyHPYfMIyrC34ChIdum9LSMvsAWu0vR+O852blugaML
+z+Nda8YJB95mvcx+sEBEHOhFJXahubW10Tuu66Q6pj2/XvABWitz7VowjO3lcwSo
+3lB+o9SJTA6ZX/xHoLz9L0DmUeFt6J0PrReinNZASSt2cRdokyJyrGAzawbuIDsh
+WMnfmtnSGA==
+=HIX9
 -----END PGP SIGNATURE-----
