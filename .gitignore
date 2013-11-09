@@ -4,3 +4,5 @@
 /output/*
 /content/assets/*
 /work/*
+/.bundle
+/vendor
