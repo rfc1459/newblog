@@ -6,3 +6,4 @@
 /work/*
 /.bundle
 /vendor
+/.ruby-version
