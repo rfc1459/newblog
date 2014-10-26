@@ -42,15 +42,3 @@ desc "Compile and publish in production mode"
 Publish.new :publish => :assets do |t|
   t.mode = :production
 end
-
-# Emergency reset switch (just in case)
-namespace :emergency do
-  task :reset do
-    # This can fail
-    begin
-      Rake::Task["assets:unapply_quilt"].execute
-    rescue
-    end
-    Rake::Task["clobber"].execute
-  end
-end

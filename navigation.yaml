@@ -17,12 +17,12 @@
       title: "Disclaimer"
       href: "/disclaimer/"
       nav_id: "disclaimer"
-      icon: "exclamation-sign"
+      icon: "exclamation-circle"
     -
       title: "Credits"
       href: "/credits/"
       nav_id: "credits"
-      icon: "beaker"
+      icon: "flask"
     -
       title: "Rettifiche"
       href: "/rettifiche/"
