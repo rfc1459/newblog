@@ -2,6 +2,6 @@
 title: EPIC FAIL
 ---
 
-<figure class="pagination-centered">
-<img src="/img/fail.jpg" alt="TRIPLE FACEPALM!">
+<figure>
+<img class="img-responsive center-block" src="/img/fail.jpg" alt="TRIPLE FACEPALM!">
 </figure>
