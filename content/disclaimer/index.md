@@ -9,15 +9,18 @@ Legalese
 Il presente blog non costituisce testata giornalistica, non ha, comunque
 carattere periodico ed è aggiornato secondo la disponibilità e la reperibilità
 dei materiali ivi contenuti. Pertanto, non può essere considerato in alcun
-modo un prodotto editoriale ai sensi della [Legge n° 62 del 7.03.2001][62/2001].
+modo un prodotto editoriale ai sensi della [Legge n° 62 del
+7.03.2001][62/2001].
 
 
 Licenze
 -------
 
-Il contenuto del blog è concesso in licenza [Creative Commons Attribution 3.0][CC-BY-3.0].
-L'infrastruttura utilizzata per generarlo è coperta da [GPLv3][] per colpa
-della licenza di [kramdown][].
+Il contenuto del blog è concesso in licenza [Creative Commons Attribution
+3.0][CC-BY-3.0].
+
+L'infrastruttura utilizzata per generarlo è coperta da una banalissima
+2-clause BSD. Potete [consultarla][LICENSE] nei sorgenti del sito.
 
 
 Privacy policy
@@ -32,17 +35,17 @@ seguenti dati a scopo statistico e di gestione degli abusi:
   * status code della richiesta
   * user agent
 
-I log di cui sopra sono a disposizione esclusiva del proprietario del webserver
-e non verranno divulgati a terze parti se non dietro esplicita richiesta
-dell'Autorità Giudiziaria.
+I log di cui sopra sono a disposizione esclusiva del proprietario del
+webserver e non verranno divulgati a terze parti se non dietro esplicita
+richiesta dell'Autorità Giudiziaria.
 
 Il presente sito non utilizza cookie e/o altri strumenti di tracciamento.
 
 Alcuni dei servizi di terze parti utilizzati ([Google WebFonts][webfonts],
-[DISQUS][], [MathJax][])
-*potrebbero* utilizzare cookie e/o trattare i vostri dati indipendentemente
-dalla privacy policy di questo sito. Vi prego di consultare le rispettive policy
-dei singoli servizi.
+[DISQUS][], [MathJax][]) *potrebbero* utilizzare cookie e/o trattare i vostri
+dati indipendentemente dalla privacy policy di questo sito. Vi prego di
+consultare le rispettive policy dei singoli servizi.
+
 
 [62/2001]: http://www.camera.it/parlam/leggi/01062l.htm
 [CC-BY-3.0]: http://creativecommons.org/licenses/by/3.0/it/deed.it
@@ -51,3 +54,4 @@ dei singoli servizi.
 [webfonts]: http://www.google.com/webfonts
 [DISQUS]: http://www.disqus.com/
 [MathJax]: http://www.mathjax.org/
+[LICENSE]: https://github.com/rfc1459/newblog/blob/master/LICENSE
