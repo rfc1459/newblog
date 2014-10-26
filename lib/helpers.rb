@@ -136,7 +136,7 @@ def route_path(item)
 end
 
 def route_assets(item)
-  item[:content_filename].gsub(/^content\/assets\/[^\/]+/, '').gsub(/_/, '.')
+  item[:content_filename].gsub(/^content\/assets/, '').gsub(/_/, '.')
 end
 
 class PygmentsRenderer < Redcarpet::Render::HTML

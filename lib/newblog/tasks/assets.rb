@@ -23,13 +23,11 @@ module Rfc1459::Newblog::Tasks
 
   class BuildAssets < Rake::TaskLib
 
-    DEFAULT_WORK_AREA = 'work' unless defined? DEFAULT_WORK_AREA
     DEFAULT_SOURCE_DIR = File.join('assets', 'src') unless defined? DEFAULT_SOURCE_DIR
     DEFAULT_TARGET_DIR = File.join('content', 'assets') unless defined? DEFAULT_TARGET_DIR
 
     def initialize(name = :assets)
       @name = name
-      @work_area = DEFAULT_WORK_AREA
       @source_dir = DEFAULT_SOURCE_DIR
       @target_dir = DEFAULT_TARGET_DIR
       yield(self) if block_given?
@@ -38,10 +36,9 @@ module Rfc1459::Newblog::Tasks
 
     attr_reader :name
 
-    attr_accessor :work_area, :source_dir, :target_dir
+    attr_accessor :source_dir, :target_dir
 
     def define
-      CLEAN.include(@work_area)
       CLOBBER.include(@target_dir)
 
       # Set a default description if the caller didn't give one
@@ -53,54 +50,13 @@ module Rfc1459::Newblog::Tasks
 
       namespace(self.name) do
 
-        # Apply quilt patches
-        task :apply_quilt do
-          sh %{quilt push -a}
-        end
-
-        # Clear quilt patches
-        task :unapply_quilt do
-          sh %{quilt pop -a}
-        end
-
-        # Work area
-        directory @work_area
-        file @work_area => [ :apply_quilt ] do
-          cp_r Dir["#{@source_dir}/bootstrap/*"], @work_area
-          rm_rf File.join(@work_area, "img")
-        end
-
-        # Font directory
-        font_dir = File.join(@work_area, "font")
-        directory font_dir
-        file font_dir => [ @work_area ] do
-          Dir["#{@source_dir}/fontawesome/font/*"].each do |f|
-            cp f, "#{font_dir}/#{File.basename f.gsub(/\./, '_')}"
-          end
-        end
-
-        # Less files
-        font_awesome_less = "#{@work_area}/less/font-awesome.less"
-        file font_awesome_less => [ @work_area ] do
-          cp Dir["#{@source_dir}/fontawesome/less/font-awesome.less"], "#{@work_area}/less"
-        end
-
-        task :prepare => [:apply_quilt, @work_area, font_dir, font_awesome_less, :unapply_quilt]
-
-        # Build assets
-        directory @target_dir
-        file @target_dir => [ :prepare ] do
-          sh %{cd #{@work_area} && npm install}
-          sh %{make -C #{@work_area} bootstrap}
-          Dir["#{@work_area}/bootstrap/css/*.css"].each do |f|
-            # Remove non-minified CSSes
-            rm f if /^(bootstrap\.css|bootstrap-responsive.css)$/ =~ File.basename(f)
-          end
-          # Remove non-minified js
-          rm "#{@work_area}/bootstrap/js/bootstrap.js"
-          cp_r "#{@work_area}/bootstrap", "#{@target_dir}/bootstrap"
-          rm_rf @work_area
-        end
+        # Build minified CSS overrides: this is a stop-gap solution until
+        # I find a better way of handling them (perhaps version-controlling
+        # the minified css itself and getting rid of the assets task?)
+        # 2014/10/26 -morph
+        css = File.join(@target_dir, 'css')
+        directory css
+        file css => @target_dir
 
         # Minify CSS files
         rule '.min.css' => [
@@ -109,10 +65,10 @@ module Rfc1459::Newblog::Tasks
           sh %{recess --compress #{t.source} > #{t.name}}
         end
 
-        overrides_min_css = "#{@target_dir}/bootstrap/css/overrides.min.css"
-        file overrides_min_css => [ @target_dir, "#{@source_dir}/overrides.css" ]
+        overrides_min_css = File.join(css, 'overrides.min.css')
+        file overrides_min_css => [ css, File.join(@source_dir, 'overrides.css') ]
 
-        task :build => [ @target_dir, overrides_min_css ]
+        task :build => overrides_min_css
 
       end
     end

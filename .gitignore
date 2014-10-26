@@ -3,7 +3,6 @@
 /tmp/*
 /output/*
 /content/assets/*
-/work/*
 /.bundle
 /vendor
 /.ruby-version

@@ -20,16 +20,18 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}
     %title= get_title
-    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/bootstrap.min.css"}
-    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/bootstrap-responsive.min.css"}
-    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
+    %link{:rel => "stylesheet", :href => "//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "/css/overrides.min.css"}
     / IE Sucks
     /[if lt IE 9]
-      %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+      %script{:src => "//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"}
+      %script{:src => "//oss.maxcdn.com/respond/1.4.2/respond.min.js"}
     - needs_mathjax = mathjax_required?
     - if needs_mathjax
-      %script{:type => "text/javascript", :src => "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"}
+      %script{:type => "text/javascript", :src => "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"}
 
     / Shortcut icons et al.
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
@@ -82,8 +84,8 @@
             Fork me on GitHub
 
     -# Javascript stuff
-    %script{:src => "http://code.jquery.com/jquery-latest.js"}
-    %script{:src => "/js/bootstrap.min.js"}
+    %script{:src => "//code.jquery.com/jquery-latest.js"}
+    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
     - if needs_mathjax
       %script{:src => "/js/mathjax_config.js"}
     - if @config[:disqus_enabled]
