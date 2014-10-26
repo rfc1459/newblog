@@ -17,7 +17,7 @@
   %h1
     - if is_front_page?
       #{@config[:blog_name]}
-      %small= @config[:blog_tagline]
+      %small.lead= @config[:blog_tagline]
     - else
       #{@item[:title]}
-      %small= @config[:blog_name]
+      %small.lead= @config[:blog_name]

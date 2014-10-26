@@ -45,24 +45,25 @@
 
   %body
     / The top-level navigation bar used in phone/narrow tablet layout
-    .navbar.navbar-static-top.hidden-desktop
-      .navbar-inner
-        .container
-          %button{:type => "button", :class => "btn btn-navbar", :data => {:toggle => "collapse", :target => ".nav-collapse"}}
+    .navbar.navbar-default.navbar-static-top.hidden-md.hidden-lg
+      .container
+        .navbar-header
+          %button{:type => "button", :class => "navbar-toggle collapsed", :data => {:toggle => "collapse", :target => ".navbar-collapse"}}
+            %span.sr-only<
+              Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a{:class => "brand", :href => "/"}= @config[:blog_name]
-          .nav-collapse.collapse
-            %ul.nav
-              - @config[:navigation].each do |block|
-                = render('_navbar_partial', :block => block)
+          %a{:class => "navbar-brand", :href => "/"}= @config[:blog_name]
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            - @config[:navigation].each do |block|
+              = render('_navbar_partial', :block => block)
     .container
-      .row-fluid
-        = render('_header', :item => @item)
-      .row-fluid
+      = render('_header', :item => @item)
+      .row
         / Main content area
-        .span10
+        .col-md-10
           - content = find_and_preserve(yield)
           -# If we're dealing with an article we need to render it using a specialised partial
           - if @item[:kind] == 'article'
@@ -70,18 +71,18 @@
           - else
             = content
         / The navigation sidebar used on devices with high resolution (desktops et al.)
-        .span2.visible-desktop
+        .col-md-2.visible-md.visible-lg
           - @config[:navigation].each do |block|
             = render('_sidebar_partial', :block => block)
 
-      .row-fluid
+    %footer
+      .container
         %hr
-        %footer
-          &copy; Matteo Panella &mdash; Contenuto concesso in licenza
-          %a{:href => "http://creativecommons.org/licenses/by/3.0/it/deed.it", :target => "_blank"} CC BY 3.0
-          &mdash;
-          %a{:href => "https://github.com/rfc1459/newblog/", :target => "_blank"}
-            Fork me on GitHub
+        &copy; Matteo Panella &mdash; Contenuto concesso in licenza
+        %a{:href => "http://creativecommons.org/licenses/by/3.0/it/deed.it", :target => "_blank"} CC BY 3.0
+        &mdash;
+        %a{:href => "https://github.com/rfc1459/newblog/", :target => "_blank"}
+          Fork me on GitHub
 
     -# Javascript stuff
     %script{:src => "//code.jquery.com/jquery-latest.js"}

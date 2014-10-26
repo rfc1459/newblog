@@ -13,16 +13,15 @@
 -#
 -# You should have received a copy of the GNU General Public License
 -# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-.well.well-small.sidebar-nav
-  %ul.nav.nav-list
-    %li.nav-header
-      %i{:class => "icon-#{block[:icon]}"}
-      = block[:title]
-    - block[:entries].each do |item|
-      %li{:class => is_current_item?(item) && "active"}
-        - if item.has_key?(:icon)
-          %a{:href => item[:href]}<
-            = succeed " #{item[:title]}" do
-              %i{:class => "icon-#{item[:icon]}"}
-        - else
-          %a{:href => item[:href]}= item[:title]
+%div.list-group
+  %div.list-group-item.disabled
+    %i{:class => "fa fa-#{block[:icon]} fa-fw"}
+    = block[:title]
+  - block[:entries].each do |item|
+    - cls = is_current_item?(item) && "list-group-item active" || "list-group-item"
+    - if item.has_key?(:icon)
+      %a{:href => item[:href], :class => cls}<
+        = succeed " #{item[:title]}" do
+          %i{:class => "fa fa-#{item[:icon]} fa-fw"}
+    - else
+      %a{:href => item[:href], :class => cls}= item[:title]

@@ -37,6 +37,25 @@ body {
   white-space: pre;
 }
 
+/* Fix Bootstrap 3 oddities */
+body > .container {
+  padding-left: 15px;
+  padding-right: 15px;;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+a.list-group-item {
+  color: #428BCA;
+}
+
 /* Pygments style */
 .hll { background-color: #ffffcc }
 .c { color: #999988; font-style: italic } /* Comment */
