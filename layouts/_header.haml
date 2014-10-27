@@ -24,10 +24,9 @@
 -# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 -# POSSIBILITY OF SUCH DAMAGE.
 .page-header
-  %h1
-    - if is_front_page?
-      #{@config[:blog_name]}
-      %small.lead= @config[:blog_tagline]
-    - else
-      #{@item[:title]}
-      %small.lead= @config[:blog_name]
+  - if is_front_page?
+    %h1= @config[:blog_name]
+    %p.lead.tagline= @config[:blog_tagline]
+  - else
+    %h1= @item[:title]
+    %p.lead.tagline.visible-md.visible-lg= @config[:blog_name]

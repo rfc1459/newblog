@@ -47,10 +47,16 @@ body {
   white-space: pre;
 }
 
+.tagline {
+  font-weight: 400;
+  line-height: 1;
+  color: #777;
+}
+
 /* Fix Bootstrap 3 oddities */
 body > .container {
   padding-left: 15px;
-  padding-right: 15px;;
+  padding-right: 15px;
 }
 
 .container .text-muted {
