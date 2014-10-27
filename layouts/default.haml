@@ -30,9 +30,9 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}
     %title= get_title
-    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"}
-    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"}
-    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/css/bootstrap.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/css/bootstrap-theme.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "//maxcdn.bootstrapcdn.com/font-awesome/#{@config[:fontawesome_ver]}/css/font-awesome.min.css"}
     %link{:rel => "stylesheet", :href => "//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "/css/overrides.min.css"}
     / IE Sucks
@@ -96,7 +96,7 @@
 
     -# Javascript stuff
     %script{:src => "//code.jquery.com/jquery-latest.min.js"}
-    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/js/bootstrap.min.js"}
     - if needs_mathjax
       %script{:src => "/js/mathjax_config.js"}
     - if @config[:disqus_enabled]

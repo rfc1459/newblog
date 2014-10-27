@@ -79,6 +79,12 @@ watcher:
 # Disqus base url
 disqus_base_url: 'http://blog.level28.org'
 
+# Bootstrap version
+bootstrap_ver: '3.2.0'
+
+# FontAwesome version
+fontawesome_ver: '4.2.0'
+
 # Deployment configuration
 deploy:
   production:
