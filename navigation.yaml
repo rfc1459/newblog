@@ -41,9 +41,6 @@
       href: "http://insomniac.slackware.it/"
       title: "Insomniac"
     -
-      href: "http://silentman.it/"
-      title: "Silentman"
-    -
       href: "http://margiovanni.com/"
       title: "Kentoo"
     -
@@ -52,9 +49,6 @@
     -
       href: "http://blog.bofh.it/"
       title: "Md"
-    -
-      href: "http://www.groklaw.net"
-      title: "Groklaw"
 
 # Outbound links
 -
@@ -71,12 +65,16 @@
       icon: "twitter"
     -
       title: "Google+"
-      href: "https://plus.google.com/109288520593001509254"
+      href: "https://plus.google.com/+MatteoPanella/"
       icon: "google-plus"
     -
       title: "Facebook"
       href: "https://www.facebook.com/morpholo/"
       icon: "facebook"
+    -
+      title: "Steam"
+      href: "https://steamcommunity.com/id/morpholo/"
+      icon: "steam"
 
 # Meta entries
 -
