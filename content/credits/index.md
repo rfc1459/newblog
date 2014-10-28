@@ -8,7 +8,7 @@ Stack software
 
 ### Web
 
- * [Debian Squeeze][debian]
+ * [Debian Wheezy][debian]
  * [KVM][kvm]
  * [libvirt][]
  * [nginx][]
@@ -16,7 +16,7 @@ Stack software
 ### Content management
 
   * [Ruby][]
-  * [rvm][]
+  * [rbenv][]
   * [RubyGems][]
   * [nanoc][]
   * [redcarpet][]
@@ -44,14 +44,14 @@ Contenuti
 [debian]: http://www.debian.org/
 [kvm]: http://www.linux-kvm.org/
 [libvirt]: http://libvirt.org/
-[nginx]: http://nginx.com/
+[nginx]: http://nginx.org/
 [ruby]: http://www.ruby-lang.org/
-[rvm]: http://rvm.io/
+[rbenv]: https://github.com/sstephenson/rbenv
 [RubyGems]: http://rubygems.org/
 [nanoc]: http://nanoc.ws/
 [redcarpet]: https://github.com/vmg/redcarpet
 [bootstrap]: http://getbootstrap.com/
-[FontAwesome]: http://fortawesome.github.com/Font-Awesome/
+[FontAwesome]: http://fortawesome.github.io/Font-Awesome/
 [webfonts]: http://www.google.com/webfonts
 [jQuery]: http://jquery.com/
 [MathJax]: http://www.mathjax.org/
