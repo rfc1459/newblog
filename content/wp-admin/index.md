@@ -1,5 +1,6 @@
 ---
 title: EPIC FAIL
+is_hidden: true
 ---
 
 <figure>

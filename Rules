@@ -58,6 +58,14 @@ compile '/stuff/*' do
   # Don't filter miscellaneous stuff
 end
 
+compile '/robots/' do
+  # Don't filter robots.txt
+end
+
+compile '/sitemap/' do
+  filter :haml
+end
+
 compile '/js/*/' do
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
@@ -101,15 +109,23 @@ route '/icons/*/' do
 end
 
 route '/img/*/' do
-  item[:content_filename].gsub(/^content/, '')
+  route_generic(item)
 end
 
 route '/images/*/' do
-  item[:content_filename].gsub(/^content/, '')
+  route_generic(item)
 end
 
 route '/stuff/*/' do
-  item[:content_filename].gsub(/^content/, '')
+  route_generic(item)
+end
+
+route '/robots/' do
+  route_generic(item)
+end
+
+route '/sitemap/' do
+  item.identifier.chop + '.xml'
 end
 
 route '/wp-admin/' do

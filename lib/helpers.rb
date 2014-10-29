@@ -34,6 +34,7 @@ require 'redcarpet'
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Tagging
+include Nanoc::Helpers::XMLSitemap
 include Rfc1459::Newblog::Environments
 include Rfc1459::Newblog::Navigation
 include Rfc1459::Newblog::Archives
@@ -147,6 +148,10 @@ end
 
 def route_assets(item)
   item[:content_filename].gsub(/^content\/assets/, '').gsub(/_/, '.')
+end
+
+def route_generic(item)
+  item[:content_filename].gsub(/^content/, '')
 end
 
 class PygmentsRenderer < Redcarpet::Render::HTML
