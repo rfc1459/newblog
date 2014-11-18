@@ -28,7 +28,7 @@ gem 'haml'
 gem 'builder'
 gem 'activesupport'
 gem 'uglifier'
-gem 'rake', '~> 0.9.2.2'
+gem 'rake', '~> 10.3'
 gem 'redcarpet', :platforms => ruby_19_plus_without_jruby + [:mswin]
 gem 'pygments.rb', :platforms => [:ruby, :mswin]
 gem 'thin'
