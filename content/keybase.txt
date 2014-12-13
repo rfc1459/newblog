@@ -1,0 +1,79 @@
+==================================================================
+https://keybase.io/rfc1459
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://blog.level28.org
+  * I am rfc1459 (https://keybase.io/rfc1459) on keybase.
+  * I have a public key with fingerprint 1554 736D B705 CA86 A833  4C1F BDD0 3B54 E3CE 1BBE
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+        },
+        "key": {
+            "fingerprint": "1554736db705ca86a8334c1fbdd03b54e3ce1bbe",
+            "host": "keybase.io",
+            "key_id": "BDD03B54E3CE1BBE",
+            "uid": "da9a49da32236a066f89c012d81fdc00",
+            "username": "rfc1459"
+        },
+        "merkle_root": {
+            "ctime": 1418483972,
+            "hash": "bb698f19e7eb07f0ebcb42cdef4da4a4a868095acabbbe5dc1bd5f524f0c1fdaff13ae5342d17d04ecdca46648f03fb8ada9ef8555fbb3130dff57237f32b51b",
+            "seqno": 108291
+        },
+        "service": {
+            "hostname": "blog.level28.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1418484015,
+    "expire_in": 157680000,
+    "prev": "59cb67c68448ac1cb15f37479fdc2a78d434d20fb7e48324926dbda34953a85d",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2.0.22 (GNU/Linux)
+
+owFVkn9MVWUYx+/Nsrhqmi1maXp3/NGCy+38eN9z3kMUeZEmCdUg0Jrrct7zvu/l
+XC73wLkXEBDLkDlIR0pOSnBFTCnFZJXMlUtC2lzWH+TWxmo26Ddi+SvWpNl7GK08
+55/znuf7fJ/n8zzvawvmeHzeqZGLp9/0dfd6v/gVe57b9bzSIGCb1AmZDYIZs2g8
+6X7FjQoqZArltA4bCRq0bH/cJjQYTfhnNQGhhjoJy45zlRjUgorQGHDlbjKz4hHq
+VDqW6yVIEAJNUQnWRGgaSDWQogBTYpgQUcEQUMWkEsaUW5bZieQtVYUZz7BF+N/Q
+unWiEoIgV8nJlUKhXB6rngkQQzeATgxFlhXVEFWVId0UJZkgiRFTFF1hgjqzSA4z
+JQB1t90K6pTHaNix7RlmM2m5CglICCBF12TekJEo4zkYqzpikk41ikWNiRSbGMgm
+oQwQA/AXqUjUoWEamINAYkqYQAZlwEQOSgzGJMWgUAEykTQiAmoS0wCqChATFYaR
+wREoQxBChrEiKSJhDGqyojFFxlDCnCBBq+I2b05Esi41umenxjKp27c7tVk4HLMj
+wRitoTEZBW0nwhMrHTtpm3aMR8uSycpMFzxZV+mqa49THJ41CmMrTvje/r9Yt84t
+QwGiBAMC3VJpOTRsuQqocXL+uHVoDfeEuolVzVQRAMgwJRNLkCka0HS+CtnQEAEK
+ILLIsEb5kGWgy/xm8N0BHSoGguQ/VF4paUS4ZcKKxI1ktUOFxhZv5+0er88z947b
+3Jvr8aUs+vc63/XyfE/fiSO4vyskvtR08OKy9kuF33cczhmcaP6oZ8J3Yc3UvJ9H
+bg7/Ub1g+83ilsdSf7/7lM+btilrbahtddUrrbuvFvVOTZYH9hRmp4d7xkN5r/+V
+tok8WzrY03Q+/dTET5NdwcePXArsPzq1cmisfeen+xv95yJoPPWz6a7RL+t776tY
+snc4r8P33tzcyWjVtaVXP0fp+SfZjgsZJVlBoXRp/7E1h9r7vs57+zgtfTpJ7m3F
+B/x4c3Cf9OGKaD596Pr08EDHkiuP+C8XNW/ZVvFWVtr2zoZ6z1O7Xric0/pGWW/W
+0APv/NkUitT2n/nl7JUm6+jHW9//btrOiL66vvOH6MZVBS9Orv9tc+HgyrKv2s4s
+TinuHRw9UfBt3xNTi+78pHj1ivrugnOpzcmKhbW7bwzlRkauzxM/CIrk/sXRZW2e
+dwc2no4N3HNeRd9k2GP9oH/vNeHBtePZ2zr3PFlS2PLM2I8Po53ZB+ffGFp+ckPK
+ofjCY3O6iw5syPdurevcUdL393JJdQJZh/2Pjp79Bw==
+=L4Fk
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rfc1459
+
+==================================================================

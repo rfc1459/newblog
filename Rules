@@ -62,6 +62,10 @@ compile '/robots/' do
   # Don't filter robots.txt
 end
 
+compile '/keybase/' do
+  # Never *EVER* touch the keybase proof
+end
+
 compile '/sitemap/' do
   filter :haml
 end
@@ -121,6 +125,10 @@ route '/stuff/*/' do
 end
 
 route '/robots/' do
+  route_generic(item)
+end
+
+route '/keybase/' do
   route_generic(item)
 end
 
