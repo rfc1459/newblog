@@ -62,10 +62,10 @@ data_sources:
 disqus_base_url: 'http://blog.level28.org'
 
 # Bootstrap version
-bootstrap_ver: '3.3.1'
+bootstrap_ver: '3.3.2'
 
 # FontAwesome version
-fontawesome_ver: '4.2.0'
+fontawesome_ver: '4.3.0'
 
 # Deployment configuration
 deploy:
