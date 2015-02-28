@@ -48,14 +48,21 @@ Le serie TV si contano sulle dita di una mano (letteralmente):
 
 ### Tempo libero e hobby
 
-Impiego il (poco) tempo a disposizione come development lead di [Azzurra IRC Network][azzurra]
-e scrivendo software che è inutile al 99.9% della popolazione mondiale. A volte
-mi capita di scrivere [qualcosa][moca] di utile.
+Impiego il (poco) tempo a disposizione al di fuori dell'orario di lavoro
+infilandomi in grotteschi litigi inerenti software open source, cloud e altre
+cose di cui non frega niente a qualsiasi persona sana di mente.
 
-Se proprio siete curiosi, potete visitare il mio [profilo su GitHub][github].
+Ho un passato (recente) da lead dev e Services Root Admin di [Azzurra IRC
+Network][azzurra].
 
-Il mio hobby preferito è rompere lo scatolame ad Asus, NVIDIA ed altri OEM
-che producono tablet Android ;-)
+Spesso e volentieri scrivo software utile solo a me, raramente scrivo
+[qualcosa][moca] di utile. Se proprio siete curiosi, potete visitare il mio
+[profilo su GitHub][github].
+
+Il mio hobby preferito è girare con un cerino acceso in mano dentro una
+polveriera &mdash; o in altri termini, discutere apertamente e velenosamente
+con chi pensa che systemd sia l'unica vera via e chi solleva obiezioni sia un
+incompetente ;-)
 
 
 Contatti e fuffa web 2.0
@@ -69,6 +76,8 @@ La mia chiave PGP personale ha id `E3CE1BBE` ed è disponibile su un qualsiasi
 keyserver membro di `pool.sks-keyservers.net`. In alternativa potete trovarla
 nell'oggetto `PGPKEY-E3CE1BBE` del database whois di RIPE NCC. Il fingerprint
 della chiave è `1554 736D B705 CA86 A833 4C1F BDD0 3B54 E3CE 1BBE`.
+
+Per chi preferisce il nuovo che avanza, sono su [Keybase][].
 
 Durante l'inizio di novembre 2013 ho eseguito un roll-over delle chiavi PGP,
 per amor di completezza potete trovare uno [statement formale][rollover]
@@ -91,3 +100,4 @@ Un appunto sulle mail:
 [moca]: https://github.com/rfc1459/moca/
 [github]: https://github.com/rfc1459/
 [rollover]: /stuff/key-E3CE1BBE.txt
+[Keybase]: https://keybase.io/rfc1459
