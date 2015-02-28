@@ -56,7 +56,7 @@
 # Outbound links
 -
   title: "Link vari"
-  icon: "link"
+  icon: "external-link-square"
   entries:
     -
       title: "GitHub"
@@ -73,11 +73,15 @@
     -
       title: "Facebook"
       href: "https://www.facebook.com/morpholo/"
-      icon: "facebook"
+      icon: "facebook-official"
     -
       title: "Steam"
       href: "https://steamcommunity.com/id/morpholo/"
       icon: "steam"
+    -
+      title: "Keybase"
+      href: "https://keybase.io/rfc1459"
+      icon: "certificate"
 
 # Meta entries
 -
@@ -88,7 +92,7 @@
       title: "Archivio"
       href: "/archive/"
       nav_id: "archive"
-      icon: "calendar"
+      icon: "archive"
     -
       title: "Tag"
       href: "/tags/"
