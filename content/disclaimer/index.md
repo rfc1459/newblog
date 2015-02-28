@@ -12,6 +12,9 @@ dei materiali ivi contenuti. Pertanto, non può essere considerato in alcun
 modo un prodotto editoriale ai sensi della [Legge n° 62 del
 7.03.2001][62/2001].
 
+Le opinioni espresse sono personali e non riconducibili a specifiche attività
+professionali.
+
 
 Licenze
 -------
@@ -42,16 +45,18 @@ richiesta dell'Autorità Giudiziaria.
 Il presente sito non utilizza cookie e/o altri strumenti di tracciamento.
 
 Alcuni dei servizi di terze parti utilizzati ([Google WebFonts][webfonts],
-[DISQUS][], [MathJax][]) *potrebbero* utilizzare cookie e/o trattare i vostri
-dati indipendentemente dalla privacy policy di questo sito. Vi prego di
-consultare le rispettive policy dei singoli servizi.
+[Bootstrap CDN][BootstrapCDN], [CloudFlare][], [DISQUS][], [MathJax][]) *potrebbero* utilizzare
+cookie e/o trattare i vostri dati indipendentemente dalla privacy policy di
+questo sito. Vi prego di consultare le rispettive policy dei singoli servizi.
 
 
 [62/2001]: http://www.camera.it/parlam/leggi/01062l.htm
 [CC-BY-3.0]: http://creativecommons.org/licenses/by/3.0/it/deed.it
 [GPLv3]: http://www.gnu.org/licenses/gpl.html
 [kramdown]: http://kramdown.rubyforge.org/
-[webfonts]: http://www.google.com/webfonts
-[DISQUS]: http://www.disqus.com/
+[webfonts]: https://www.google.com/webfonts
+[DISQUS]: https://disqus.com/
 [MathJax]: http://www.mathjax.org/
 [LICENSE]: https://github.com/rfc1459/newblog/blob/master/LICENSE
+[BootstrapCDN]: http://www.bootstrapcdn.com/
+[CloudFlare]: https://www.cloudflare.com/
