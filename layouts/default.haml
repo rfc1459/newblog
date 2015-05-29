@@ -101,12 +101,3 @@
     %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/js/bootstrap.min.js"}
     - if needs_mathjax
       %script{:src => "/js/mathjax_config.js"}
-    - if @config[:disqus_enabled]
-      %script{:src => "/js/disqus_config.js"}
-      - if is_front_page? or @item[:kind] == 'article'
-        %script{:src => "/js/disqus_count.js"}
-      - if @item[:kind] == 'article'
-        :javascript
-          disqus_identifier = "#{url_for_article(@item)}"
-          disqus_url = "#{@config[:disqus_base_url]}#{url_for_article(@item)}"
-        %script{:src => "/js/disqus.js"}
