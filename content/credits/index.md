@@ -38,7 +38,6 @@ Contenuti
 
   * [jQuery][]
   * [MathJax][]
-  * [DISQUS][]
 
 
 [debian]: http://www.debian.org/
@@ -55,5 +54,4 @@ Contenuti
 [webfonts]: http://www.google.com/webfonts
 [jQuery]: http://jquery.com/
 [MathJax]: http://www.mathjax.org/
-[DISQUS]: http://www.disqus.com/
 [pygmentsrb]: https://github.com/tmm1/pygments.rb

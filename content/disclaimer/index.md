@@ -45,7 +45,7 @@ richiesta dell'Autorità Giudiziaria.
 Il presente sito non utilizza cookie e/o altri strumenti di tracciamento.
 
 Alcuni dei servizi di terze parti utilizzati ([Google WebFonts][webfonts],
-[Bootstrap CDN][BootstrapCDN], [CloudFlare][], [DISQUS][], [MathJax][]) *potrebbero* utilizzare
+[Bootstrap CDN][BootstrapCDN], [CloudFlare][], [MathJax][]) *potrebbero* utilizzare
 cookie e/o trattare i vostri dati indipendentemente dalla privacy policy di
 questo sito. Vi prego di consultare le rispettive policy dei singoli servizi.
 
@@ -55,7 +55,6 @@ questo sito. Vi prego di consultare le rispettive policy dei singoli servizi.
 [GPLv3]: http://www.gnu.org/licenses/gpl.html
 [kramdown]: http://kramdown.rubyforge.org/
 [webfonts]: https://www.google.com/webfonts
-[DISQUS]: https://disqus.com/
 [MathJax]: http://www.mathjax.org/
 [LICENSE]: https://github.com/rfc1459/newblog/blob/master/LICENSE
 [BootstrapCDN]: http://www.bootstrapcdn.com/
