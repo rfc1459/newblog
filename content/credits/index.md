@@ -38,6 +38,7 @@ Contenuti
 
   * [jQuery][]
   * [MathJax][]
+  * [Cookie Consent 2][cookieconsent2]
 
 
 [debian]: http://www.debian.org/
@@ -55,3 +56,4 @@ Contenuti
 [jQuery]: http://jquery.com/
 [MathJax]: http://www.mathjax.org/
 [pygmentsrb]: https://github.com/tmm1/pygments.rb
+[cookieconsent2]: https://github.com/silktide/cookieconsent2

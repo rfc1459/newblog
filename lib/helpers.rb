@@ -33,6 +33,7 @@ require 'redcarpet'
 
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::XMLSitemap
 include Rfc1459::Newblog::Environments

@@ -93,6 +93,8 @@
         &copy; Matteo Panella &mdash; Contenuto concesso in licenza
         %a{:href => "http://creativecommons.org/licenses/by/3.0/it/deed.it", :target => "_blank"} CC BY 3.0
         &mdash;
+        #{link_to('Privacy policy', @config[:privacy_policy_url])}
+        &mdash;
         %a{:href => "https://github.com/rfc1459/newblog/", :target => "_blank"}
           Fork me on GitHub
 
@@ -101,3 +103,6 @@
     %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/js/bootstrap.min.js"}
     - if needs_mathjax
       %script{:src => "/js/mathjax_config.js"}
+    -# FUCKING COOKIE LAW...
+    %script{:src => "/js/cookieconsent_config.js"}
+    %script{:src => "//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"}

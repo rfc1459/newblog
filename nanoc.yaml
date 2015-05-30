@@ -64,6 +64,9 @@ bootstrap_ver: '3.3.4'
 # FontAwesome version
 fontawesome_ver: '4.3.0'
 
+# Privacy policy location (absolute path)
+privacy_policy_url: '/privacy/'
+
 # Deployment configuration
 deploy:
   production:
