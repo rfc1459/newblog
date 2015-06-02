@@ -140,6 +140,10 @@ route '/wp-admin/' do
   item[:content_filename].gsub(/^content/, '').gsub(/\.md$/, '.html')
 end
 
+route '/cookie-policy/' do
+  route_generic(item).gsub(/.md$/, '.html')
+end
+
 route '*' do
   route_path(item)
 end
