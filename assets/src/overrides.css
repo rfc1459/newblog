@@ -36,6 +36,11 @@ body {
   margin-top: 40px;
 }
 
+/* Iubenda */
+.iubenda-ibadge {
+  vertical-align: middle;
+}
+
 /* Post metadata */
 .metadata {
   padding-bottom: 10px;
