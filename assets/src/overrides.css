@@ -31,11 +31,17 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* Style for DISQUS comment area */
-.comment-box {
+/* No comment */
+.no-comment {
   margin-top: 40px;
 }
 
+/* Iubenda */
+.iubenda-ibadge {
+  vertical-align: middle;
+}
+
+/* Post metadata */
 .metadata {
   padding-bottom: 10px;
 }

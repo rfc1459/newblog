@@ -1,12 +1,3 @@
-# Master killswitch for DISQUS
-disqus_enabled: true
-
-# Short-name for DISQUS
-disqus_shortname: "level28-blog"
-
-# Are we running in developer mode?
-disqus_developer: 1
-
 # Base URL for atom feed
 base_url: "http://localhost:3000"
 

@@ -29,34 +29,9 @@ L'infrastruttura utilizzata per generarlo è coperta da una banalissima
 Privacy policy
 --------------
 
-Ogni accesso a questo sito comporta la registrazione nei log del webserver dei
-seguenti dati a scopo statistico e di gestione degli abusi:
-
-  * data e ora della richiesta
-  * indirizzo IPv4/IPv6 di provenienza
-  * URI richiesta
-  * status code della richiesta
-  * user agent
-
-I log di cui sopra sono a disposizione esclusiva del proprietario del
-webserver e non verranno divulgati a terze parti se non dietro esplicita
-richiesta dell'Autorità Giudiziaria.
-
-Il presente sito non utilizza cookie e/o altri strumenti di tracciamento.
-
-Alcuni dei servizi di terze parti utilizzati ([Google WebFonts][webfonts],
-[Bootstrap CDN][BootstrapCDN], [CloudFlare][], [DISQUS][], [MathJax][]) *potrebbero* utilizzare
-cookie e/o trattare i vostri dati indipendentemente dalla privacy policy di
-questo sito. Vi prego di consultare le rispettive policy dei singoli servizi.
+Per la privacy policy si rimanda al link nel footer.
 
 
 [62/2001]: http://www.camera.it/parlam/leggi/01062l.htm
 [CC-BY-3.0]: http://creativecommons.org/licenses/by/3.0/it/deed.it
-[GPLv3]: http://www.gnu.org/licenses/gpl.html
-[kramdown]: http://kramdown.rubyforge.org/
-[webfonts]: https://www.google.com/webfonts
-[DISQUS]: https://disqus.com/
-[MathJax]: http://www.mathjax.org/
 [LICENSE]: https://github.com/rfc1459/newblog/blob/master/LICENSE
-[BootstrapCDN]: http://www.bootstrapcdn.com/
-[CloudFlare]: https://www.cloudflare.com/

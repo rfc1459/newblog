@@ -58,9 +58,6 @@ data_sources:
     # it will become “/about.html/” instead.
     allow_periods_in_identifiers: true
 
-# Disqus base url
-disqus_base_url: 'http://blog.level28.org'
-
 # Bootstrap version
 bootstrap_ver: '3.3.4'
 

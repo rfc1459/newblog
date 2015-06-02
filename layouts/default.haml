@@ -93,6 +93,12 @@
         &copy; Matteo Panella &mdash; Contenuto concesso in licenza
         %a{:href => "http://creativecommons.org/licenses/by/3.0/it/deed.it", :target => "_blank"} CC BY 3.0
         &mdash;
+        :plain
+          <a href="//www.iubenda.com/privacy-policy/969449" class="iubenda-white iub-legal-only iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+        &mdash;
+        %a{:href => '/cookie-policy/'}
+          Cookie Policy
+        &mdash;
         %a{:href => "https://github.com/rfc1459/newblog/", :target => "_blank"}
           Fork me on GitHub
 
@@ -101,12 +107,6 @@
     %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/#{@config[:bootstrap_ver]}/js/bootstrap.min.js"}
     - if needs_mathjax
       %script{:src => "/js/mathjax_config.js"}
-    - if @config[:disqus_enabled]
-      %script{:src => "/js/disqus_config.js"}
-      - if is_front_page? or @item[:kind] == 'article'
-        %script{:src => "/js/disqus_count.js"}
-      - if @item[:kind] == 'article'
-        :javascript
-          disqus_identifier = "#{url_for_article(@item)}"
-          disqus_url = "#{@config[:disqus_base_url]}#{url_for_article(@item)}"
-        %script{:src => "/js/disqus.js"}
+    -# FUCKING COOKIE LAW...
+    %script{:src => "/js/cookieconsent_config.js"}
+    %script{:src => "//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"}

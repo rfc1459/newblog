@@ -35,11 +35,9 @@
 -# Article body
 = content
 
--# DISQUS form
+-# Warn people that comments are gone
 - unless embedded
-  -if @config[:disqus_enabled]
-    #disqus_thread.comment-box
-  - else
-    .alert.alert-warning
-      %i.fa.fa-warning.fa-lg
-      Staging mode, comments are disabled
+  .alert.alert-info.no-comment
+    %i.fa.fa-info-circle.fa-lg
+    Due to the asinine Italian Cookie Law, the Disqus comment form is gone
+    forever. Sorry.
